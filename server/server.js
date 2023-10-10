@@ -1,14 +1,18 @@
 const express = require('express');
 const router = express.Router();
 
+const connectDB = require("./config/db");
+const dotenv = require("dotenv");
 const dishRoute = require('./routes/dishRoute');
 const userRoute = require('./routes/userRoute');
 const ordersRoute = require('./routes/ordersRoute');
-const path = require('path')
+const { notFound, errorHandler } = require("./middleware/errorMiddleware");
+const path = require('path');
 
-const db = require("./db.js")
-
+dotenv.config();
+connectDB();
 const app = express();
+
 const port = process.env.PORT || 8000;
 
 app.use(express.json());
@@ -41,5 +45,10 @@ if (process.env.NODE_ENV === "production") {
 app.get('/', (req, res) => {
     res.send("Server working🔥 on port " + port)
 });
+
+// Error Handling middlewares
+app.use(notFound);
+app.use(errorHandler);
+
 
 app.listen(port, () => console.log(`server running on port ${port}`))
