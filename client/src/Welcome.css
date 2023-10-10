@@ -1,0 +1,108 @@
+.Welcome__wrapper {
+    flex-direction: column-reverse;
+    gap: 2rem;
+}
+
+.Welcome__imgs {
+    position: relative;
+    width: 100%;
+}
+
+.Welcome__text {
+    display: grid;
+    place-items: center;
+    width: 100%;
+}
+
+@media (min-width: 901px) {
+    .Welcome__wrapper {
+        flex-direction: row;
+        height: 550px;
+    }
+
+    .Welcome__imgs {
+        width: 60%;
+    }
+
+    .Welcome__text {
+        width: 40%;
+    }
+}
+
+.Welcome__img-1 {
+    width: min(55%, 450px);
+    height: 100%;
+    object-fit: cover;
+}
+
+.Welcome__img-2 {
+    position: absolute;
+    object-fit: cover;
+    width: min(55%, 600px);
+    max-height: 110%;
+    bottom: -20%;
+    right: 0;
+    border: 10px solid var(--clr-white);
+}
+
+.Welcome__vector-1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 150%;
+}
+
+
+
+.Welcome__text--wrapper {
+    position: relative;
+}
+
+.Welcome__img-pizza {
+    position: absolute;
+    bottom: 0;
+    right: -85px;
+    z-index: -1;
+    height: 130px;
+    animation-name: upAndDown, rotate;
+    animation-duration: 25s, 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-composition: add;
+}
+
+.Welcome__text--wrapper p {
+    padding-inline: 2rem;
+    backdrop-filter: blur(1px);
+}
+
+@keyframes upAndDown {
+    0% {
+        transform: translateY(0);
+
+    }
+
+    40% {
+        transform: translateY(200px) scale(1.3);
+        ;
+    }
+
+    80% {
+        transform: translateY(-250px);
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

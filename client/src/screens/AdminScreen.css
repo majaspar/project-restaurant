@@ -1,0 +1,119 @@
+.AdminScreen__list {
+    gap: 1rem;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.AdminScreen__list li {
+
+    background: var(--clr-white);
+    border: 1px solid var(--clr-accent);
+    padding: 0.5rem;
+}
+
+.AdminScreen__list li:hover {
+    background: var(--clr-accent);
+}
+
+.UserList__wrapper {
+    overflow-x: auto;
+}
+
+.UsersList__table,
+.OrdersList__table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid var(--clr-table-border-gray);
+}
+
+thead {
+    text-align: left;
+    text-transform: uppercase;
+    background: var(--clr-accent);
+}
+
+.fa-trash {
+    color: rgb(168, 11, 11);
+    cursor: pointer;
+    text-align: center;
+}
+
+.fa-edit {
+    color: rgb(13, 105, 167);
+    font-size: 1.2rem;
+}
+
+.DishesList__wrapper {
+    overflow-x: auto;
+}
+
+.DishesList__actions {
+    justify-content: space-around;
+}
+
+.DishesList table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--clr-table-border-gray);
+}
+
+.OrdersList__table th,
+.OrdersList__table td,
+.UsersList__table th,
+.UsersList__table td,
+.DishesList__table th,
+.DishesList__table td {
+    border: 1px solid var(--clr-table-border-gray);
+    padding: 0.2rem;
+}
+
+tr:hover {
+    background: var(--clr-gray-hover);
+}
+
+.AddDish__form,
+.EditDish__form {
+    row-gap: 0.5rem;
+}
+
+.EditDish__form input,
+.EditDish__form textarea,
+.EditDish__form select,
+.AddDish__form input,
+.AddDish__form textarea,
+.AddDish__form select {
+    width: min(100%, 500px);
+    border: 1px solid var(--clr-table-border-gray);
+    padding: 0.5rem;
+
+}
+
+.OrdersList__status {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.OrdersList .fa-circle-check {
+    color: green;
+}
+
+.deleteModalWindow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(500px, 90%);
+    background-color: var(--clr-white);
+    padding: 3rem 2rem;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.DeleteModal__buttons {
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
