@@ -4,19 +4,14 @@ const router = express.Router();
 const dishRoute = require('./routes/dishRoute');
 const userRoute = require('./routes/userRoute');
 const ordersRoute = require('./routes/ordersRoute');
-const cors = require('cors')
+const path = require('path')
 
 const db = require("./db.js")
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 6000;
 
 app.use(express.json());
-app.use(cors({
-    origin: ["http://localhost:3000", "https://sweet-cendol-952b12.netlify.app"],
-    methods: ["POST", "GET"],
-    credentials: true
-}))
 
 
 
@@ -24,18 +19,23 @@ app.use('/api/dishes/', dishRoute)               //if url is coming with 'api/di
 app.use('/api/users/', userRoute)
 app.use('/api/orders/', ordersRoute)
 
+// --------------------------deployment------------------------------
 
+const __dirname1 = path.resolve();
 
-// if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname1, "/client/build")));
 
-//     app.use(express.static('../client/build'))
+    app.get("*", (req, res) =>
+        res.sendFile(path.resolve(__dirname1, "client", "build", "index.html"))
+    );
+} else {
+    app.get("/", (req, res) => {
+        res.send("API is running..");
+    });
+}
 
-//     app.get('*', (req, res) => {
-
-//         res.sendFile(path.resolve(__dirname, '../client/build/index.html'))
-
-//     })
-// }
+// --------------------------deployment------------------------------
 
 
 app.get('/', (req, res) => {
