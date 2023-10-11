@@ -48,7 +48,7 @@ export default function Footer() {
                     {currentUser && <div className=" link--white" onClick={() => { dispatch(logoutUser()) }}>Log out</div>}
                 </div>
             </div>
-            <hr style={{ width: "90%", margin: "2rem auto" }} />
+            <hr className="margins mt3" />
             <div className="center mt3">&copy; Italian Restaurant 2023 | Designed & Developed by <a href="https://lenaesposito.co.uk" className="uppercase link--white">Lena
                 Esposito</a></div>
         </footer >

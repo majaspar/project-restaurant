@@ -11,7 +11,7 @@ import vector1 from './assets/vector1.svg';
 export default function PopularDishes() {
   return (
     <section className="popular-dishes margins mt5 mb7">
-      <img className="popular-dishes--vector" src={vector1} alt="S-shaped line for decorating background" />
+
       <h2 className="popular-dishes__title section-title center">Most popular</h2>
       <p className="text-desc center mb4">See what our customers love the most.</p>
       <div className="popular-dishes__grid grid">

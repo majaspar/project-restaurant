@@ -28,7 +28,7 @@ export default function Welcome() {
                         <p className="text-desc mb2">Chefs with over 20 years of experience make sure that every dish is cooked to perfection. The public dining room that ultimately came to be known as the restaurant originated in France, and the French have continued to make major contributions to the restaurant's development.</p>
 
 
-                        <img className="Welcome__img-pizza" src={pizza} alt="floating and rotating pizza icon" />
+                        {/* <img className="Welcome__img-pizza" src={pizza} alt="floating and rotating pizza icon" /> */}
 
                     </div>
                 </div>

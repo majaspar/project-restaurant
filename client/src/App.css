@@ -863,6 +863,8 @@ header {
 /***************************************/
 .popular-dishes {
   position: relative;
+  background: url('assets/vector1.svg') no-repeat;
+  background-size: contain;
 }
 
 .popular-dishes__grid {
@@ -953,6 +955,7 @@ header {
   width: 75%;
   position: relative;
   z-index: 1;
+  overflow: hidden;
 }
 
 .about__img--img {
@@ -993,6 +996,7 @@ header {
 }
 
 .pastaIcon {
+  border: 1px solid red;
   position: absolute;
   z-index: 5;
   bottom: 5%;
@@ -1004,10 +1008,8 @@ header {
 
 @media (max-width: 900px) {
 
-
-
   .about__img {
-    width: 100%;
+    width: 100vw;
     position: relative;
     z-index: 1;
   }
@@ -1057,6 +1059,8 @@ header {
 /******************************/
 .Address {
   position: relative;
+  background: url('assets/vector1.svg') no-repeat;
+  background-size: contain;
 }
 
 .Address__vector {
