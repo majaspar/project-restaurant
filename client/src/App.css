@@ -934,13 +934,6 @@ header {
   font-size: 2rem;
 }
 
-.popular-dishes--vector {
-  position: absolute;
-  height: 100%;
-  z-index: -1;
-  bottom: 0;
-  right: -50px;
-}
 
 /**************************/
 /***   About           ***/
@@ -986,7 +979,6 @@ header {
 }
 
 .about__text p {
-  position: relative;
   z-index: 6;
 }
 
@@ -995,12 +987,17 @@ header {
   z-index: 6;
 }
 
+.pastaIcon__wrapper {
+  align-self: flex-end;
+  position: relative;
+  width: 200px;
+}
+
 .pastaIcon {
-  border: 1px solid red;
   position: absolute;
   z-index: 5;
-  bottom: 5%;
-  right: -15%;
+  bottom: 0;
+  right: 10px;
   height: auto;
   width: 250px;
   animation: bowlShake 3s linear infinite;
@@ -1061,15 +1058,6 @@ header {
   position: relative;
   background: url('assets/vector1.svg') no-repeat;
   background-size: contain;
-}
-
-.Address__vector {
-  position: absolute;
-  z-index: -1;
-  top: -10%;
-  right: -20%;
-  width: 80%;
-  transform: rotate(180deg);
 }
 
 .Address__img {
@@ -1215,14 +1203,15 @@ header {
 /***   Contact Screen         ***/
 /*****************************/
 .ContactScreen__wrapper {
-  position: relative;
+  background: url('assets/vector1.svg') repeat-y;
+  background-size: contain;
 }
 
-.ContactScreen__vector {
-  position: absolute;
-  width: 90%;
-  transform: rotate(160deg);
-  z-index: -1;
+@media (min-width:901px) {
+  .ContactScreen__wrapper {
+    background: url('assets/vector1.svg') no-repeat;
+    background-size: cover;
+  }
 }
 
 .ContactScreen__contact {
@@ -1248,6 +1237,30 @@ header {
 .ContactScreen__grid--item i {
   font-size: 3.5rem;
   color: var(--clr-accent-red);
+}
+
+.ContactForm__wrapper {
+  width: 100%;
+}
+
+/* some input styles are in the Register form section */
+
+.ContactForm {
+  margin: auto;
+}
+
+.ContactForm textarea {
+  height: 200px;
+}
+
+.ContactForm textarea:focus,
+.ContactForm input:focus {
+  outline: 1px solid var(--clr-accent);
+  border: 1px solid var(--clr-accent);
+}
+
+.ContactForm {
+  width: min(100%, 340px);
 }
 
 /*****************************/
@@ -1286,15 +1299,11 @@ header {
 }
 
 .reviews {
-  position: relative;
-}
+  background: url('assets/vector1.svg') no-repeat;
+  background-size: cover;
+  padding-bottom: 7rem;
+  /* changed margin to padding to better display vector in bg  */
 
-.Reviews__vector-1 {
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  right: 0;
-  width: 120%;
 }
 
 .reviews__grid {
@@ -1501,20 +1510,20 @@ footer {
 /**************************/
 /***   register form           ***/
 /**************************/
-
-.register__form input,
-.login__form input,
-.ContactForm input,
-.ContactForm textarea {
+form input,
+form textarea {
   background: var(--clr-white);
   width: 100%;
   border: 1px solid grey;
   padding: 0.5rem;
   margin-bottom: 0.5rem;
+  font-size: 90%;
 }
 
-.ContactForm textarea {
-  height: 200px;
+form input:focus,
+form textarea:focus {
+  outline: 1px solid var(--clr-accent);
+  border: 1px solid var(--clr-accent);
 }
 
 .register__form button,
@@ -1525,9 +1534,8 @@ footer {
 
 
 .register__form,
-.login__form,
-.ContactForm {
-  width: min(100%, 500px);
+.login__form {
+  width: min(100%, 340px);
 }
 
 /**************************/

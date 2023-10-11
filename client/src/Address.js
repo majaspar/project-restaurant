@@ -7,7 +7,6 @@ export default function Address() {
     return (
         <div className="Address margins mt7 mb7">
 
-            {/* <img className="Address__vector" src={vector1} alt="S-shaped line for decorating background" /> */}
             <div className="Address__grid center flex">
                 <div>
                     <h2 className="section-title">Italian Restaurant</h2>
