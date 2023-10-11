@@ -13,7 +13,7 @@ dotenv.config();
 connectDB();
 const app = express();
 
-const port = process.env.PORT || 8000;
+const port = process.env.PORT;
 
 app.use(express.json());
 
@@ -35,16 +35,12 @@ if (process.env.NODE_ENV === "production") {
     );
 } else {
     app.get("/", (req, res) => {
-        res.send("API is running..");
+        res.send("API is running. Server working🔥 on port " + port);
     });
 }
 
 // --------------------------deployment------------------------------
 
-
-app.get('/', (req, res) => {
-    res.send("Server working🔥 on port " + port)
-});
 
 // Error Handling middlewares
 app.use(notFound);

@@ -8,7 +8,11 @@
     "server": "nodemon server/server.js",
     "build": "npm install && npm install --prefix client && npm run build --prefix client"
   },
-  "keywords": [],
+  "keywords": [
+    "mern",
+    "restaurant",
+    "delivery-service"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
