@@ -5,7 +5,7 @@ import CloseIcon from '@mui/icons-material/Close';
 
 
 import img1 from '../assets/jay-wennington-N_Y88TWmGwA-unsplash.jpg';
-import img2 from '../assets/photo-1502301103665-0b95cc738daf.avif';
+import img2 from '../assets/photo-1502301103665-0b95cc738daf.jpg';
 import img3 from '../assets/casey-lee-awj7sRviVXo-unsplash.jpg';
 import img4 from '../assets/sebastian-coman-photography-eBmyH7oO5wY-unsplash.jpg';
 import img5 from '../assets/kamil-kalbarczyk-19Ft3QfakMo-unsplash.jpg';
