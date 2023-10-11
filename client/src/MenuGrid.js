@@ -1,6 +1,5 @@
 
 import MenuGridItem from './MenuGridItem';
-import axios from 'axios';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllDishes } from './actions/dishActions';
@@ -9,17 +8,6 @@ import Error from './Error'
 
 
 export default function MenuGrid({ menuSectionTitle, menuCategory }) {
-    // const fetchData = async () => {
-    //     const data = await axios.get('https://italian-restaurant-server.onrender.com/api/dishes/getalldishes')
-    //     console.log(data)
-    // }
-
-    // useEffect(() => {
-    //     return () => {
-    //         fetchData();
-    //     }
-    // }, [])
-
 
     const dispatch = useDispatch()
 
@@ -37,13 +25,10 @@ export default function MenuGrid({ menuSectionTitle, menuCategory }) {
             {loading ? (<Loading />) : error ? (<Error message="There's been an error while loading the menu." />) : (
                 dishes.map((dish) => {
 
-                    if (dish.category === menuCategory) {
-                        return (
-                            <MenuGridItem key={dish._id} dish={dish} />
-                        )
-                    }
+                    return dish.category === menuCategory && <MenuGridItem key={dish._id} dish={dish} />
+                }
 
-                })
+                )
             )}
         </div>
 
