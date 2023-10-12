@@ -18,46 +18,16 @@ import img10 from '../assets/01.jpg';
 export default function GalleryScreen() {
 
     let data = [
-        {
-            id: 1,
-            imgSrc: img1
-        },
-        {
-            id: 2,
-            imgSrc: img2
-        },
-        {
-            id: 3,
-            imgSrc: img3
-        },
-        {
-            id: 4,
-            imgSrc: img4
-        },
-        {
-            id: 5,
-            imgSrc: img5
-        },
-        {
-            id: 6,
-            imgSrc: img6
-        },
-        {
-            id: 7,
-            imgSrc: img7
-        },
-        {
-            id: 8,
-            imgSrc: img8
-        },
-        {
-            id: 9,
-            imgSrc: img9
-        },
-        {
-            id: 10,
-            imgSrc: img10
-        },
+        { id: 1, imgSrc: img1 },
+        { id: 2, imgSrc: img2 },
+        { id: 3, imgSrc: img3 },
+        { id: 4, imgSrc: img4 },
+        { id: 5, imgSrc: img5 },
+        { id: 6, imgSrc: img6 },
+        { id: 7, imgSrc: img7 },
+        { id: 8, imgSrc: img8 },
+        { id: 9, imgSrc: img9 },
+        { id: 10, imgSrc: img10 },
     ]
 
     const [model, setModel] = useState(false);

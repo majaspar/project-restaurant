@@ -8,12 +8,14 @@
 
 :root {
   /* colors */
-  --linear-red: linear-gradient(var(--clr-accent-red-hover), var(--clr-accent-red));
+  --linear-red: linear-gradient(220deg, var(--clr-accent-red-light), var(--clr-accent-red));
   --linear-dark: linear-gradient(rgb(100, 95, 95), var(--clr-dark));
   --clr-accent: #ffc400;
   --clr-accent-hover: #ffcd62;
   --clr-accent-red: #c04e4e;
   --clr-accent-red-hover: #fd8989;
+  --clr-accent-red-light-hover: #f39595;
+  --clr-accent-red-light: #f5bbbb;
   --clr-accent-active: rgb(230, 168, 0);
   --clr-blanchedalmond: rgb(238, 109, 109);
   --clr-text-gray: rgb(129, 129, 129);
@@ -858,6 +860,13 @@ header {
   row-gap: 0.5rem;
 }
 
+@media (max-width:600px) {
+  .menu__grid--item {
+    grid-template-rows: 1fr 1fr;
+  }
+}
+
+
 .menu__grid--item:hover {
   background-color: var(--clr-gray-hover);
   border-radius: 5px;
@@ -1005,7 +1014,7 @@ header {
 .about__text {
   position: relative;
   padding: 2rem;
-  border: 2px solid var(--clr-accent-red);
+  border: 2px solid var(--clr-accent-red-hover);
   border-right: none;
   background: var(--clr-white);
   flex-direction: column;
@@ -1261,14 +1270,10 @@ header {
 }
 
 .ContactForm__wrapper {
+  padding-inline: 5%;
   width: 100%;
 }
 
-/* some input styles are in the Register form section */
-
-.ContactForm {
-  margin: auto;
-}
 
 .ContactForm textarea {
   height: 200px;
@@ -1281,7 +1286,19 @@ header {
 }
 
 .ContactForm {
-  width: min(100%, 340px);
+  width: min(100%, 550px);
+  background-color: var(--clr-white);
+  border: 2px solid var(--clr-accent-red);
+  padding: 1rem;
+  margin: auto;
+}
+
+/* some input styles are in the Register form section */
+
+.ContactForm:hover,
+.ContactForm:focus {
+  box-shadow: 0px 0px 15px 0px var(--clr-accent-red-hover);
+
 }
 
 /*****************************/
@@ -1318,7 +1335,7 @@ header {
 }
 
 .reviews__grid {
-  color: white;
+  color: rgb(68, 64, 64);
   gap: 2rem;
   width: 100%;
   grid-template-columns: repeat(1, 1fr);
@@ -1330,13 +1347,14 @@ header {
   border-top-right-radius: 70px;
   border-bottom-left-radius: 70px;
   padding: 2rem 2.5rem;
-  background: var(--linear-red);
+  background: var(--clr-accent-red-light);
   transition: all 0.5s;
-  border: 2px solid var(--clr-accent-red-hover);
+  border: 2px solid var(--clr-accent-red-light);
 }
 
 .reviews__grid--item:hover {
   border: 2px solid yellow;
+  background: var(--clr-accent-red-light-hover);
   border-top-right-radius: 0;
   border-bottom-left-radius: 0;
   border-top-left-radius: 70px;
@@ -1355,7 +1373,6 @@ header {
 }
 
 .reviews__text {
-  color: white;
   width: 90%;
 }
 
@@ -1567,25 +1584,15 @@ footer {
 
 .Gallery {
   padding-inline: 5%;
-  -webkit-column-count: 2;
-  -moz-column-count: 2;
-  column-count: 2;
-  -webkit-column-width: 50%;
-  -moz-column-width: 50%;
+  columns: 2;
   column-width: 50%;
 }
 
 @media(min-width:901px) {
   .Gallery {
-    -webkit-column-count: 3;
-    -moz-column-count: 3;
-    column-count: 3;
-    -webkit-column-width: 33%;
-    -moz-column-width: 33%;
+    columns: 3;
     column-width: 33%;
   }
-
-
 }
 
 .Gallery__images {

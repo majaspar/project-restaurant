@@ -2,7 +2,7 @@
 
 export default function Navbar() {
     return (
-        <section className="place-order">
+        <section className="place-order shadow-dark">
             <div className="place-order__wrapper margins">
                 <h2 className="section-title center placeOrderAnimation">
 

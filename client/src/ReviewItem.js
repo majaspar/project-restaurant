@@ -1,10 +1,10 @@
 import React from 'react'
 
-export default function ReviewItem({ id, reviewer, rating, avatar, review }) {
+export default function ReviewItem({ reviewer, rating, avatar, review }) {
 
 
     return (
-        <div key={id} className="reviews__grid--item shadow-dark">
+        <div key={reviewer} className="reviews__grid--item shadow-dark">
             <div className="reviews__name-wrapper flex mb1">
                 <div>
                     <h3 className="reviews__name">{reviewer}</h3>

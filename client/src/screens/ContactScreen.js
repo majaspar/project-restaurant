@@ -70,7 +70,7 @@ export default function ContactScreen() {
                 <section className="margins mt7 mb7 ContactForm__wrapper">
 
                     <h2 className="section-title center">Contact Form</h2>
-                    <form className="ContactForm flex-column" action="https://formsubmit.co/d11cca59037b3f7effa04f2dc67a109d" method="POST">
+                    <form className="ContactForm shadow flex-column" action="https://formsubmit.co/d11cca59037b3f7effa04f2dc67a109d" method="POST">
                         <div className="form__labelled-item">
                             <label className="form__label" htmlFor="name">Name: </label>
                             <input type="text" placeholder="Name" name="user_name" required />
