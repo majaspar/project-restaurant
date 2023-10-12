@@ -16,7 +16,8 @@
     background: var(--clr-accent);
 }
 
-.UserList__wrapper {
+.UserList__wrapper,
+.OrdersList__wrapper {
     overflow-x: auto;
 }
 

@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 import placeholder from './assets/testimonial-photo.jpg';
 import placeholder2 from './assets/photo-1580489944761-15a19d654956.jpg';
 import placeholder3 from './assets/photo-1549351512-c5e12b11e283.jpg';
-import vector1 from './assets/vector1.svg';
 
 export default function Reviews() {
 

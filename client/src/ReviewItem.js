@@ -12,7 +12,7 @@ export default function ReviewItem({ id, reviewer, rating, avatar, review }) {
                 </div>
                 <img className="reviews__img shadow-dark" src={avatar} alt="Reviewer's avatar" />
             </div>
-            <p className="reviews__text">{review}</p>
+            <p className="reviews__text text-desc">{review}</p>
         </div>
     )
 }

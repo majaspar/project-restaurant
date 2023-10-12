@@ -48,21 +48,20 @@ export default function Navbar() {
     document.getElementById('nav').style.transform = "translateX(100%)"
   }
   return (
-    <header className={navBg ? 'header header__navOnScroll' : 'headeer'}>
+    <header className={navBg ? 'header header__navOnScroll' : 'header'}>
 
       <div className="header__wrapper flex margins">
-        <div className="header__logo"> Italian <i className="fa-solid fa-utensils"></i> Restaurant</div>
-        <button id="openIcon" className="header__open--nav" onClick={openNav}><i className="fa-solid fa-bars"></i></button>
-        <button className="sr-only"> Menu</button>
+        <a href="/" alt="go to homepage"><div className="header__logo"> Italian <i className="fa-solid fa-utensils"></i> Restaurant</div></a>
+        <button id="openIcon" className="header__open--nav" alt="open navigation" onClick={openNav}><i className="fa-solid fa-bars"></i></button>
         <nav id="nav" className="nav flex">
 
           <ul className="nav__list">
-            <div className="nav__list--closeX grid" onClick={closeNav}><i className="fa-solid fa-x"></i></div>
-            <li className="nav__list--item content__item HomeLink"><a className="link link--dia" href="/">Home</a></li>
-            <li className="nav__list--item content__item MenuLink"><a className="link link--dia" href="/menu">Menu</a></li>
-            <li className="nav__list--item content__item GalleryLink"><a className="link link--dia" href="/gallery">Gallery</a></li>
-            <li className="nav__list--item content__item AboutLink"><a className="link link--dia" href="/about">About</a></li>
-            <li className="nav__list--item content__item ContactLink"><a className="link link--dia" href="/contact">Contact</a></li>
+            <div className="nav__list--closeX grid" alt="close navigation" onClick={closeNav}><i className="fa-solid fa-x"></i></div>
+            <li className="nav__list--item content__item HomeLink"><a className="link link--dia" href="/" alt="go to homepage">Home</a></li>
+            <li className="nav__list--item content__item MenuLink"><a className="link link--dia" href="/menu" alt="go to restaurant's menu">Menu</a></li>
+            <li className="nav__list--item content__item GalleryLink"><a className="link link--dia" href="/gallery" alt="go to gallery">Gallery</a></li>
+            <li className="nav__list--item content__item AboutLink"><a className="link link--dia" href="/about" alt="go to about page">About</a></li>
+            <li className="nav__list--item content__item ContactLink"><a className="link link--dia" href="/contact" alt="go to contact page">Contact</a></li>
             <div className="nav__list--social">
               <hr />
               <SocialMediaIcons />
@@ -79,18 +78,18 @@ export default function Navbar() {
                 <span>{currentUser.name}</span>
               </div>
               <div id="login__dropdown--items" className="login__dropdown--items">
-                {currentUser.isAdmin && <a className="" href="/admin"><div className="login__dropdown--item ">Admin</div></a>}
-                <a className="" href="/orders"><div className="login__dropdown--item ">Orders</div></a>
-                <div className="login__dropdown--item login__logout" onClick={() => { dispatch(logoutUser()) }}>Log out</div>
+                {currentUser.isAdmin && <a className="" href="/admin" alt="go to admin dashboard"><div className="login__dropdown--item ">Admin</div></a>}
+                <a className="" href="/orders" alt="see user's orders"><div className="login__dropdown--item ">Orders</div></a>
+                <div alt="Log out" className="login__dropdown--item login__logout" onClick={() => { dispatch(logoutUser()) }}>Log out</div>
               </div>
 
             </div>
 
-          ) : <a href="/login"><i className="header__icon fa-regular fa-user"></i></a>}
+          ) : <a alt="go to login page" href="/login"><i className="header__icon fa-regular fa-user"></i></a>}
 
-          <a href="/basket"><div className="header__cart"><i className="header__icon fa-solid fa-shopping-basket"></i>
+          <div className="header__cart"> <a alt="go to basket" href="/basket"><i className="header__icon fa-solid fa-shopping-basket"></i>
             <sup className="header__cart-items"><span>{cartState.cartItems.length}</span></sup>
-          </div></a>
+          </a></div>
         </div>
 
       </div>

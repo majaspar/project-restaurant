@@ -1,7 +1,6 @@
 import React from 'react'
 import inside from './assets/adrien-olichon-XB1W7TlTaxQ-unsplash.jpg'
 import SocialMediaIcons from './SocialMediaIcons'
-import vector1 from './assets/vector1.svg';
 
 export default function Address() {
     return (

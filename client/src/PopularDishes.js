@@ -5,8 +5,6 @@ import pizza from './assets/photo-1594007654729-407eedc4be65.jpg'
 import dish1 from './assets/danijela-prijovic-qits91IZv1o-unsplash1.jpg'
 import dish2 from './assets/01.jpg'
 
-import vector1 from './assets/vector1.svg';
-
 
 export default function PopularDishes() {
   return (
