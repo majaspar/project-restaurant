@@ -1,5 +1,6 @@
 {
   "name": "client",
+  "homepage": "https://project-restaurant-lena.netlify.app",
   "version": "0.1.0",
   "private": true,
   "proxy": "http://127.0.0.1:8000",
@@ -16,6 +17,7 @@
     "axios": "^1.5.0",
     "dotenv": "^16.3.1",
     "google-map-react": "^2.2.1",
+    "hashrouter": "^1.1.1",
     "http-proxy-middleware": "^2.0.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
