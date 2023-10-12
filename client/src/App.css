@@ -724,7 +724,7 @@ header {
 }
 
 .hero__desc {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .hero__text {
@@ -899,6 +899,7 @@ header {
   position: relative;
   background: url('assets/vector2.svg') no-repeat;
   background-size: contain;
+  background-position: center;
 }
 
 .popular-dishes__grid {
