@@ -87,9 +87,9 @@ export default function Navbar() {
 
           ) : <a alt="go to login page" href="/login"><i className="header__icon fa-regular fa-user"></i></a>}
 
-          <div className="header__cart"> <a alt="go to basket" href="/basket"><i className="header__icon fa-solid fa-shopping-basket"></i>
+          <a alt="go to basket" href="/basket"><div className="header__cart"><i className="header__icon fa-solid fa-shopping-basket"></i>
             <sup className="header__cart-items"><span>{cartState.cartItems.length}</span></sup>
-          </a></div>
+          </div></a>
         </div>
 
       </div>

@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Footer from './Footer';
 import CartScreen from './screens/CartScreen';
 import MenuScreen from './screens/MenuScreen';
@@ -24,7 +24,7 @@ function App() {
   return (
     <div className="App">
 
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Homescreen />} />
           <Route path="/basket" element={<CartScreen />} />
@@ -44,7 +44,7 @@ function App() {
           <Route path="/admin/adddish" element={<AddDish />} />
           <Route path="/admin/editdish/:dishid" element={<EditDish />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
 
 
 
