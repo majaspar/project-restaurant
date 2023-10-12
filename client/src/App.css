@@ -854,18 +854,40 @@ header {
 
 .menu__grid--item {
   padding: 0.5rem 0.5rem;
-  grid-template-columns: 3fr 0.8fr 0.8fr 0.5fr;
+  flex-wrap: wrap;
   align-items: center;
   gap: 1rem;
   row-gap: 0.5rem;
 }
 
-@media (max-width:600px) {
-  .menu__grid--item {
-    grid-template-rows: 1fr 1fr;
-  }
+.menu__dish--name {
+  width: min(60%, 400px);
+  border: 1px solid red;
 }
 
+.menu__qty-span {
+  width: min(15%, 110px);
+  white-space: nowrap;
+  border: 1px solid red;
+}
+
+.menu__dish--price {
+  width: min(10%, 150px);
+  border: 1px solid red;
+
+}
+
+.menu__btn--add {
+  width: 10%;
+  border: 1px solid red;
+  justify-self: end;
+  width: 4rem;
+}
+
+
+@media (max-width:600px) {
+  .menu__grid--item {}
+}
 
 .menu__grid--item:hover {
   background-color: var(--clr-gray-hover);
@@ -882,9 +904,9 @@ header {
   margin-left: 0.5rem;
 }
 
-.menu__btn--add {
-  justify-self: end;
-  width: 4rem;
+.menu__dish--description {
+  font-style: italic;
+  font-size: 0.9rem;
 }
 
 .menu__item--qty {
@@ -892,14 +914,6 @@ header {
   margin-inline: 0.2rem;
 }
 
-.menu__dish--description {
-  font-style: italic;
-  font-size: 0.9rem;
-}
-
-.qty-span {
-  white-space: nowrap;
-}
 
 /***************************************/
 /***   Most Popular Dishes           ***/
