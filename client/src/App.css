@@ -852,41 +852,40 @@ header {
 /***   Menu        ***/
 /*********************/
 
+.menu__qty-span {
+  white-space: nowrap;
+}
+
+
+.menu__btn--add {
+  width: 4rem;
+}
+
+
 .menu__grid--item {
+  display: grid;
   padding: 0.5rem 0.5rem;
-  flex-wrap: wrap;
+  grid-template-columns: 3fr 0.8fr 0.8fr 0.5fr;
   align-items: center;
   gap: 1rem;
   row-gap: 0.5rem;
 }
 
-.menu__dish--name {
-  width: min(60%, 400px);
-  border: 1px solid red;
-}
-
-.menu__qty-span {
-  width: min(15%, 110px);
-  white-space: nowrap;
-  border: 1px solid red;
-}
-
-.menu__dish--price {
-  width: min(10%, 150px);
-  border: 1px solid red;
-
-}
-
-.menu__btn--add {
-  width: 10%;
-  border: 1px solid red;
-  justify-self: end;
-  width: 4rem;
-}
-
-
 @media (max-width:600px) {
-  .menu__grid--item {}
+  .menu__grid--item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0.5rem 0.5rem;
+    align-items: center;
+    gap: 1rem;
+    row-gap: 1rem;
+  }
+
+  .menu__btn--add {
+    justify-self: end;
+    width: 4rem;
+  }
 }
 
 .menu__grid--item:hover {
@@ -1268,14 +1267,13 @@ header {
   display: grid;
   place-items: center;
   background: var(--clr-white);
-  border: 1px solid var(--clr-accent-red);
   padding: 1.2rem;
   height: 100%;
   width: 100%;
 }
 
 .ContactScreen__grid--item:hover {
-  box-shadow: 0px 0px 15px 0px var(--clr-accent-red-hover);
+  box-shadow: 0px 0px 15px 0px var(--clr-accent-hover);
 }
 
 .ContactScreen__grid--item i {
@@ -1301,8 +1299,6 @@ header {
 
 .ContactForm {
   width: min(100%, 550px);
-  background-color: var(--clr-white);
-  border: 2px solid var(--clr-accent-red);
   padding: 1rem;
   margin: auto;
 }
@@ -1311,7 +1307,7 @@ header {
 
 .ContactForm:hover,
 .ContactForm:focus {
-  box-shadow: 0px 0px 15px 0px var(--clr-accent-red-hover);
+  box-shadow: 0px 0px 15px 0px var(--clr-accent-hover);
 
 }
 
@@ -1484,12 +1480,12 @@ header {
 footer {
   color: white;
   background: var(--linear-dark);
-  padding-block: 5rem;
+  padding-block: 2rem;
 }
 
 .footer__wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
 }
 
@@ -1529,6 +1525,14 @@ footer {
   font-weight: bold;
   letter-spacing: 0.5ch;
   font-size: 120%;
+}
+
+.footer__book:hover {
+  color: var(--clr-accent-red-hover);
+}
+
+.footer__p {
+  font-size: 0.9rem;
 }
 
 /**************************/
@@ -1598,13 +1602,17 @@ footer {
 
 .Gallery {
   padding-inline: 5%;
-  columns: 2;
+  column-count: 2;
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
   column-width: 50%;
 }
 
 @media(min-width:901px) {
   .Gallery {
-    columns: 3;
+    column-count: 3;
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
     column-width: 33%;
   }
 }

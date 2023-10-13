@@ -1,6 +1,5 @@
 {
   "name": "client",
-  "homepage": "https://project-restaurant-lena.netlify.app",
   "version": "0.1.0",
   "private": true,
   "proxy": "http://127.0.0.1:80",
@@ -25,6 +24,7 @@
     "react-intersection-observer": "^9.5.2",
     "react-redux": "^8.1.2",
     "react-router-dom": "^6.16.0",
+    "react-router-hash-link": "^2.4.3",
     "react-scripts": "^5.0.1",
     "react-stripe-checkout": "^2.6.3",
     "redux": "^4.2.1",

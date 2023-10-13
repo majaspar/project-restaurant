@@ -29,6 +29,12 @@ export default function OrdersScreen() {
             <div className="mt3 margins">
                 {loading && <Loading />}
                 {error && <Error />}
+
+
+
+                {orders.length === 0 && <h2 className="mb5">You have not placed any orders yet. </h2>}
+
+
                 {orders && orders.map(order => {
 
                     const showOrderDetails = () => {

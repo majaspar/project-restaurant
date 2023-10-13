@@ -69,7 +69,7 @@ export default function LoginScreen() {
           </div>
           <button onClick={login}>Log in</button>
         </div>
-        <div > Don't have an account yet? Click <a style={{ color: "var(--clr-accent-red)", fontWeight: "bold" }} href="/register">here to register</a> .</div>
+        <div > Don't have an account yet? Click <a style={{ color: "var(--clr-accent-red)", fontWeight: "bold" }} href="/#/register">here to register</a> .</div>
 
 
       </div>

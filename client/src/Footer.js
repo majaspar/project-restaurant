@@ -17,18 +17,18 @@ export default function Footer() {
             <div className="footer__wrapper margins">
                 <div className="footer__column flex-column">
                     <div className="header__logo"> Italian <i className="fa-solid fa-utensils"></i><br />Restaurant</div>
-                    <p className="mt2">The most delicious flavours that Italian Cuisine has to offer!
-                        Have a glass of splendid Sicilian wine and feel like you're there.<br />
-                        Order your favourite dishes for collection or delivery.</p>
+                    <p className="mt2 footer__p justify">The most delicious flavours that Italian Cuisine has to offer!
+                        Have a glass of splendid Sicilian wine and feel like you're on vacatation in sunny Italy.
+                        Now you can also order your favourite dishes for collection or delivery.</p>
 
                 </div>
                 <div className="footer__column flex-column">
                     <h3 className="mb1 uppercase">Navigation</h3>
                     <a href="/" className=" link--white">Home</a>
-                    <a href="/menu" className=" link--white">Menu</a>
-                    <a href="/gallery" className=" link--white">Gallery</a>
-                    <a href="/about" className=" link--white">About</a>
-                    <a href="/contact" className=" link--white">Contact</a>
+                    <a href="/#/menu" className=" link--white">Menu</a>
+                    <a href="/#/gallery" className=" link--white">Gallery</a>
+                    <a href="/#/about" className=" link--white">About</a>
+                    <a href="/#/contact" className=" link--white">Contact</a>
                     {/* <a href="#" className=" link--white">Privacy Policy</a> */}
 
                 </div>
@@ -42,9 +42,9 @@ export default function Footer() {
                 </div>
                 <div className="footer__column flex-column">
                     <h3 className="mb1 uppercase">User Panel</h3>
-                    {!currentUser && <a href="/login" className=" link--white">Login</a>}
-                    {!currentUser && <a href="/register" className=" link--white">Register</a>}
-                    {currentUser && <a href="/orders" className=" link--white">My Orders</a>}
+                    {!currentUser && <a href="/#/login" className=" link--white">Login</a>}
+                    {!currentUser && <a href="/#/register" className=" link--white">Register</a>}
+                    {currentUser && <a href="/#/orders" className=" link--white">My Orders</a>}
                     {currentUser && <div className=" link--white" onClick={() => { dispatch(logoutUser()) }}>Log out</div>}
                 </div>
             </div>

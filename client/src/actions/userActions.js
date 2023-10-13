@@ -6,6 +6,8 @@ export const registerUser = (user) => async dispatch => {
         const response = await axios.post('/api/users/register', user)
         console.log(response)
         dispatch({ type: 'USER_REGISTER_SUCCESS' })
+
+        setTimeout(function () { window.location.href = '/#/login' }, 3000);
     }
     catch (error) {
         dispatch({ type: 'USER_REGISTER_FAILED', payload: error })

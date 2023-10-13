@@ -23,7 +23,7 @@ export default function MenuGridItem({ dish }) {
     }
 
     return (
-        <div className="menu__grid--item flex mb1">
+        <div className="menu__grid--item mb1">
 
             <div className="menu__dish--name">
                 <h3>{dish.name}
@@ -32,7 +32,7 @@ export default function MenuGridItem({ dish }) {
                 </h3>
                 <p className="menu__dish--description">{dish.description}</p>
             </div>
-            <div className="menu__qty-span">Qty:
+            <div className="menu__qty-span center">Qty:
                 <i onClick={deductQty}
                     style={{ marginLeft: "1rem", color: "red" }}
                     className="menu__icon fa-solid fa-circle-minus"></i>
@@ -41,7 +41,7 @@ export default function MenuGridItem({ dish }) {
                     style={{ color: "green" }}
                     className="menu__icon fa-solid fa-circle-plus"></i>
             </div>
-            <div className="menu__dish--price">Price: £{roundPrice(dish.price, qty)}</div>
+            <div className="menu__dish--price center">Price: £{roundPrice(dish.price, qty)}</div>
             <button className="menu__btn--add" onClick={addtocart}>Add</button>
         </div >
     )

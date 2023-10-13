@@ -1,6 +1,7 @@
 import React from 'react'
+import { HashLink as Link } from 'react-router-hash-link';
 
-export default function PopularDishItem({ imgSource, dishTitle, dishDesc }) {
+export default function PopularDishItem({ imgSource, dishTitle, dishDesc, menusection, link }) {
     return (
         <div className="popular-dishes__grid--item flex-column shadow">
             {/* Image */}
@@ -23,7 +24,7 @@ export default function PopularDishItem({ imgSource, dishTitle, dishDesc }) {
 
                     {/* Button */}
 
-                    <button className="popular-dishes__btn btn-action mt1">Go to Menu</button>
+                    <Link smooth to={link}><button className="popular-dishes__btn btn-action mt1">See all {menusection}</button></Link>
                 </div>
 
             </div>

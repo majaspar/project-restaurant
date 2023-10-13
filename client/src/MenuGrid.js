@@ -7,7 +7,7 @@ import Loading from './Loading'
 import Error from './Error'
 
 
-export default function MenuGrid({ menuSectionTitle, menuCategory }) {
+export default function MenuGrid({ menuSectionTitle, menuCategory, hash }) {
 
     const dispatch = useDispatch()
 
@@ -20,7 +20,7 @@ export default function MenuGrid({ menuSectionTitle, menuCategory }) {
     }, [dispatch])
 
     return (
-        <div className="menu__grid">
+        <div className="menu__grid" id={hash}>
             <h2 className="menu__title center section-title mt3">{menuSectionTitle}</h2>
             {loading ? (<Loading />) : error ? (<Error message="There's been an error while loading the menu." />) : (
                 dishes.map((dish) => {

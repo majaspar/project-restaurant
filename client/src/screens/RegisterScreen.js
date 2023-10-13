@@ -74,7 +74,7 @@ export default function RegisterScreen() {
           <button onClick={register} className="mt1">Register</button>
         </div>
 
-        <div className="mt5">Already have an account? <a style={{ color: "var(--clr-accent-red)", fontWeight: "bold" }} href="/login">Log in here.</a></div>
+        <div className="mt5">Already have an account? <a style={{ color: "var(--clr-accent-red)", fontWeight: "bold" }} href="/#/login">Log in here.</a></div>
       </div>
     </>
   )

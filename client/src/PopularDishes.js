@@ -14,18 +14,26 @@ export default function PopularDishes() {
       <p className="text-desc center mb4">See what our customers love the most.</p>
       <div className="popular-dishes__grid grid">
         <PopularDishItem
+          menusection="Pasta Dishes"
+          link="./menu#pastadishes"
           imgSource={dish3}
           dishTitle="Spaghetti Arrabbiata"
           dishDesc="Our tomato sauce with garlic, olive oil and chilli (optional)" />
         <PopularDishItem
+          menusection="Pizzas"
+          link="./menu#pizzas"
           imgSource={pizza}
           dishTitle="Pizza Piccante"
           dishDesc="Tomato sauce, mozzarella, Nduja and pepperoni chilli." />
         <PopularDishItem
+          menusection="Starters"
+          link="./menu#starters"
           imgSource={dish1}
           dishTitle="Spaghetti Gamberoni"
           dishDesc="King prawns sauteed with white wine, chilli, garlic, fresh basil and tomato sauce" />
         <PopularDishItem
+          menusection="Main Courses"
+          link="./menu#mains"
           imgSource={dish2}
           dishTitle="Fillet Steak"
           dishDesc="8oz+ hand cut fillet seasoned and cooked to your taste, served with chips and salad." />
