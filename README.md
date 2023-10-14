@@ -26,10 +26,10 @@
 <p>User login</p>
 <p>Email: demouser@user.com<p>
 <p>Password: demouser</p>
-<br>
+<hr>
 <h3>Admin login</h3>
-<p>Email: adminuser@admin.com<p>
-<p>Password: adminuser</p>
+<p>Email: admindemo@demo.com<p>
+<p>Password: admindemo</p>
 <hr>
 <h3>Demo card</h3>
 <p>Card Number: 4242 4242 4242 4242</p>

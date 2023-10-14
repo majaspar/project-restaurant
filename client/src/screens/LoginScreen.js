@@ -39,7 +39,7 @@ export default function LoginScreen() {
       </div>
       <div className="mb5 mt3 margins">
 
-        <h1 className="mt2 mb2">Login</h1>
+        <h1 className="mt2 mb2 section-title">Login</h1>
 
         {loading && (<Loading />)}
         {error && (<Error message="The email or password that you provided are incorrect." />)}

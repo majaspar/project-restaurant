@@ -13,8 +13,8 @@ export default function Reviews() {
   // const star1 = <Star />
   // const star2 = [<Star />, <Star />]
   // const star3 = [<Star />, <Star />, <Star />]
-  const star4 = [<Star />, <Star />, <Star />, <Star />]
-  const star5 = [<Star />, <Star />, <Star />, <Star />, <Star />]
+  const star4 = [<Star key="1" />, <Star key="2" />, <Star key="3" />, <Star key="4" />]
+  const star5 = [<Star key="1" />, <Star key="2" />, <Star key="3" />, <Star key="4" />, <Star key="5" />]
   return (
     <section className="reviews">
       <div className="reviews__wrapper margins">
@@ -29,7 +29,7 @@ export default function Reviews() {
 
         </div>
 
-        {!currentUser && <h2 className="section-title center mt7 mb3">Would You Like to Leave a Review? &rarr; <a href="/login">Log In</a></h2>}
+        {!currentUser && <h2 className="section-title center mt7 mb3">Would You Like to Leave a Review? &rarr; <a href="/#/login">Log In</a></h2>}
       </div> </section>
 
   )

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { placeOrder } from './actions/orderActions';
 import StripeCheckout from 'react-stripe-checkout'
@@ -10,6 +11,8 @@ export default function Checkout({ total }) {
 
     const orderState = useSelector((state) => state.placeOrderReducer)
     const { loading, error, success } = orderState;
+    const userState = useSelector((state) => state.loginUserReducer)
+    const { currentUser } = userState;
 
     const dispatch = useDispatch()
 
@@ -19,9 +22,9 @@ export default function Checkout({ total }) {
         setDelivery(e.target.value)
     }
     const tokenHandler = (token) => {
-        console.log(token)
+        //console.log(token)
         dispatch(placeOrder(token, total, delivery))
-        console.log(delivery)
+        // console.log(delivery)
     }
     return (
 
@@ -44,18 +47,21 @@ export default function Checkout({ total }) {
             {error && <Error message="Something went wrong while placing the order." />}
             {success && <Success message="Your order has been placed successfully." />}
 
-            <StripeCheckout
-                name="Italian Restaurant"
-                amount={total * 100}
-                shippingAddress
-                token={tokenHandler}
-                stripeKey="pk_test_51NLs6gLOk2koDDsjhpD8KKVMZ3X927MnpOLvcJZCOtrwolY77jie9PTCyqKKzgnKa54iUhPvfXcbEdWukGn1COPi00cxHmqH9S"
-                currency="GBP"
-                allowRememberMe>
 
-                <button className="basket__checkout mt2">Checkout</button>
-            </StripeCheckout>
+            {currentUser ?
+                <StripeCheckout
+                    name="Italian Restaurant"
+                    amount={total * 100}
+                    shippingAddress
+                    token={tokenHandler}
+                    stripeKey="pk_test_51NLs6gLOk2koDDsjhpD8KKVMZ3X927MnpOLvcJZCOtrwolY77jie9PTCyqKKzgnKa54iUhPvfXcbEdWukGn1COPi00cxHmqH9S"
+                    currency="GBP"
+                    allowRememberMe>
 
+                    <button className="basket__checkout mt2">Checkout</button>
+                </StripeCheckout>
+                :
+                <p className="mt2 mb1 center">You need to be logged in to place an order.<br /><Link to="/login"><span style={{ textDecoration: "underline" }}>Go to Login</span></Link></p>}
         </div>
 
     )

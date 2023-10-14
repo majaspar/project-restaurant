@@ -20,10 +20,9 @@ export default function AboutScreen() {
                 <h3 className="mb2 ff-kaushan">Simplicity</h3>
                 <div>
 
-                    <p className="text-desc justify">One of the main characteristics of Italian cuisine is its simplicity, with many dishes made up of few ingredients, and therefore Italian cooks often rely on the quality of the ingredients, rather than the complexity of preparation.
+                    <p className="text-desc justify mb2">One of the main characteristics of Italian cuisine is its simplicity, with many dishes made up of few ingredients, and therefore Italian cooks often rely on the quality of the ingredients, rather than the complexity of preparation.
                         The most popular dishes and recipes, over the centuries, have often been created by ordinary people more so than by chefs, which is why many Italian recipes are suitable for home and daily cooking, respecting regional specificities, privileging only raw materials and ingredients from the region of origin of the dish and preserving its seasonality.
                     </p>
-                    <hr className="mt2 mb2" />
 
                     <img className="AboutScreen__img1" src={img2} alt="inside of the restaurant" />
                     <h3 className="mt2 mb2 ff-kaushan">It's All About Ingredients</h3>

@@ -51,7 +51,7 @@ export default function RegisterScreen() {
 
 
         <div className="register__form flex-column">
-          <h1 className="mt2 mb2">Register form</h1>
+          <h1 className="mt2 mb2 section-title">Register form</h1>
           <div className="form__labelled-item">
             <label className="form__label" htmlFor="name">Name: </label>
             <input type="text" id="name" placeholder="Your name" value={name} onChange={(e) => setName(e.target.value)}></input>

@@ -17,14 +17,10 @@ export default function PopularDishItem({ imgSource, dishTitle, dishDesc, menuse
             <div className="popular-dishes__text--wrapper">
                 <div className="popular-dishes__text">
                     <h3 className="popular-dishes__name mb1 center ff-kaushan">{dishTitle}</h3>
-                    <div className="popular-dishes__description text-desc center mb2">{dishDesc}</div>
+                    <div className="popular-dishes__description text-desc center mb2">{dishDesc}
+                    </div>
 
-
-
-
-                    {/* Button */}
-
-                    <Link smooth to={link}><button className="popular-dishes__btn btn-action mt1">See all {menusection}</button></Link>
+                    <button className="popular-dishes__btn btn-action mt1"><Link smooth to={link}>See all {menusection}</Link></button>
                 </div>
 
             </div>

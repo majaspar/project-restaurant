@@ -24,7 +24,7 @@ export default function PopularDishes() {
           link="./menu#pizzas"
           imgSource={pizza}
           dishTitle="Pizza Piccante"
-          dishDesc="Tomato sauce, mozzarella, Nduja and pepperoni chilli." />
+          dishDesc="Fiery combination: tomato sauce, mozzarella, Nduja and pepperoni chilli." />
         <PopularDishItem
           menusection="Starters"
           link="./menu#starters"

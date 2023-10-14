@@ -12,15 +12,16 @@ export default function Address() {
                     <p className="mt2 mb2"><i className="fa-solid fa-diamond"></i>
                         <i className="fa-solid fa-diamond"></i>
                         <i className="fa-solid fa-diamond"></i></p>
-                    <p className="text-desc">Bond Street<br /> Broadmead<br /> BRISTOL<br /> BS1 3BD</p>
+                    <p className="Address__address">Bond Street<br /> Broadmead<br /> BRISTOL<br /> BS1 3BD</p>
                     <p className="mt2 mb2 center"><i className="fa-solid fa-diamond"></i>
                         <i className="fa-solid fa-diamond"></i>
                         <i className="fa-solid fa-diamond"></i></p>
-                    <p className="text-desc"><i className="fa-solid fa-phone"></i>  0 7788 990 011</p>
+                    <p className="Address__phone"><i className="fa-solid fa-phone"></i>  0 7788 990 011</p>
                     <p className="mt2 mb2 center"><i className="fa-solid fa-diamond"></i>
                         <i className="fa-solid fa-diamond"></i>
-                        <i className="fa-solid fa-diamond"></i></p>
-                    <div className="mb2" style={{ marginInline: "25%" }}><SocialMediaIcons /></div>
+                        <i className="fa-solid fa-diamond"></i>
+                    </p>
+                    <div className="mb3 grid" style={{ placeItems: "center" }}><SocialMediaIcons /></div>
                 </div>
                 <div className="Address__img shadow-dark" >
                     <img src={inside} alt="inside of the restaurant" />

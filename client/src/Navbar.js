@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { logoutUser } from "./actions/userActions";
 import SocialMediaIcons from './SocialMediaIcons';
 import Success from "./Success";
+import Tooltip from '@mui/material/Tooltip';
 
 export default function Navbar() {
 
@@ -63,7 +64,7 @@ export default function Navbar() {
             <li className="nav__list--item content__item AboutLink"><a className="link link--dia" href="/#/about" alt="go to about page">About</a></li>
             <li className="nav__list--item content__item ContactLink"><a className="link link--dia" href="/#/contact" alt="go to contact page">Contact</a></li>
             <div className="nav__list--social">
-              <hr />
+              <hr className="mb2" />
               <SocialMediaIcons />
             </div>
           </ul>
@@ -85,7 +86,7 @@ export default function Navbar() {
 
             </div>
 
-          ) : <a alt="go to login page" href="/#/login"><i className="header__icon fa-regular fa-user"></i></a>}
+          ) : <a alt="go to login page" href="/#/login"><Tooltip title="Login"><i className="header__icon fa-regular fa-user"></i></Tooltip></a>}
 
           <a alt="go to basket" href="/#/basket"><div className="header__cart"><i className="header__icon fa-solid fa-shopping-basket"></i>
             <sup className="header__cart-items"><span>{cartState.cartItems.length}</span></sup>
@@ -95,6 +96,8 @@ export default function Navbar() {
       </div>
       <div className="success__msg--wrapper">
         <div id="success__msg" className="success__msg"><Success message="Basket updated!" /></div>
+        <div id="success__msg--login" className="success__msg"><Success message="Logging in..." /></div>
+        <div id="success__msg--logout" className="success__msg"><Success message="Logging out..." /></div>
       </div>
     </header>
   )
