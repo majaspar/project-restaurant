@@ -1,42 +1,73 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/User')
+const User = require('../models/User');
+const bcrypt = require('bcrypt');
 
-router.post("/register", (req, res) => {
+
+
+router.post("/register", async (req, res) => {
     const { name, email, password } = req.body;
 
-    const newUser = new User({ name, email, password })
+    const emailExists = await User.findOne({ email })
+    if (emailExists) { throw Error('This email address is already in use.') }
 
     try {
+        const salt = await bcrypt.genSalt(10);
+        const hash = await bcrypt.hash(password, salt);
+        const newUser = new User({ name, email, password: hash })
         newUser.save()
-        res.send('User registered successfully.')
+        res.status(200).json({ email, newUser })
+
     } catch (error) {
-        return res.status(400).json({ message: error })
+        return res.status(400).json({ error: error.message })
     }
 })
 
 router.post("/login", async (req, res) => {
 
-    const { email, password } = req.body
+    const { email, password } = req.body;
 
+
+
+    if (!email || !password) {
+        throw Error('All fields must be filled')
+    }
+
+    const user = await User.findOne({ email })
+
+    if (!user) { throw Error('Incorrect EMAIL or password.') }
+
+    const match = await bcrypt.compare(password, user.password)
+    if (!match) {
+        throw Error('Incorrect email or PASSWORD.')
+    }
     try {
-
-        const user = await User.find({ email, password })
-
-        if (user.length > 0) {
+        if (match) {
             const currentUser = {
-                name: user[0].name,
-                email: user[0].email,
-                isAdmin: user[0].isAdmin,
-                _id: user[0]._id
+                _id: user._id,
+                name: user.name,
+                email: user.email
             }
             res.send(currentUser);
         }
-        else {
-            return res.status(400).json({ message: 'User Login Failed' });
-        }
+    }
 
-    } catch (error) {
+    // if (user.length > 0) {
+
+    //     const currentUser = {
+    //         _id: user._id,
+    //         name: user.name,
+    //         email: user.email
+    //     }
+    //     res.send(currentUser);
+
+    // }
+    // else {
+
+    //     return res.status(400).json({ message: 'User Login Failed' });
+    // }
+
+    catch (error) {
         return res.status(400).json({ message: 'Something went wrong' });
     }
 
