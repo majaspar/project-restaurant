@@ -8,7 +8,7 @@ export default function Menu() {
             <MenuGrid menuSectionTitle="Pizza" menuCategory="pizza" hash="pizzas" />
             <MenuGrid menuSectionTitle="Extra Toppings" menuCategory="topping" hash="" />
             <MenuGrid menuSectionTitle="Pasta" menuCategory="pasta" hash="pastadishes" />
-            <MenuGrid menuSectionTitle="Main Event" menuCategory="main" hash="mains" />
+            <MenuGrid menuSectionTitle="Main Course" menuCategory="main" hash="mains" />
             <MenuGrid menuSectionTitle="Sides" menuCategory="side" hash="" />
 
 

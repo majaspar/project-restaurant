@@ -22,7 +22,7 @@ export default function Footer() {
                         Now you can also order your favourite dishes for collection or delivery.</p>
 
                 </div>
-                <div className="footer__column flex-column">
+                <div className="footer__column Footer__navigation flex-column">
                     <h3 className="mb1 uppercase">Navigation</h3>
                     <a href="/" className=" link--white">Home</a>
                     <a href="/#/menu" className=" link--white">Menu</a>

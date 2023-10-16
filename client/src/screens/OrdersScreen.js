@@ -64,11 +64,11 @@ export default function OrdersScreen() {
                                     )
                                 })}
                             </ol>
-                            <div>{(order.isCollected === false && order.isDelivered === false) && <h3 className="placeOrderAnimation">Order status pending...</h3>}</div>
+                            <div>{(order.isCollected === false && order.isDelivered === false) && <h3 className="placeOrderAnimation mb1">Order status pending...</h3>}</div>
                             <div>{order.isDelivered && <div><h3>Delivered <i className="fa-solid fa-circle-check"></i></h3>
                                 <p className="mt1">Delivery address: {order.address.street}, {order.address.postcode}, {order.address.city}. </p></div>}</div>
                             <div>{order.isCollected && <h3>Collected <i className="fa-solid fa-circle-check"></i></h3>}</div>
-                            <p className="" style={{ textAlign: "right" }}>Order total: £{(order.orderAmount).toFixed(2)}</p>
+                            <p className="" style={{ textAlign: "right" }}>Order total: <b>£{(order.orderAmount).toFixed(2)}</b></p>
                             <p></p>
                             <hr />
                         </div>

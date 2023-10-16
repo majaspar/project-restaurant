@@ -8,6 +8,7 @@
 
 :root {
   /* colors */
+  --linear-red-light: linear-gradient(220deg, var(--clr-white), var(--clr-accent-red-hover));
   --linear-red: linear-gradient(220deg, var(--clr-accent-red-light), var(--clr-accent-red));
   --linear-dark: linear-gradient(rgb(100, 95, 95), var(--clr-dark));
   --clr-accent: #ffc400;
@@ -484,11 +485,12 @@ header {
 }
 
 .login__username {
+
   align-items: start;
   cursor: pointer;
   gap: 0.5rem;
   max-width: 10rem;
-  overflow-x: scroll;
+  overflow-x: hidden;
 }
 
 .login__logout {
@@ -904,7 +906,7 @@ header {
 
 .menu__dish--description {
   font-style: italic;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
 .menu__item--qty {
@@ -1415,13 +1417,12 @@ header {
   border-top-right-radius: 70px;
   border-bottom-left-radius: 70px;
   padding: 2rem 2.5rem;
-  background: var(--clr-accent-red-light);
+  background: var(--linear-red-light);
   transition: all 0.5s;
   border: 2px solid var(--clr-accent-red-light);
 }
 
 .reviews__grid--item:hover {
-  background: var(--clr-accent-red-light-hover);
   border-top-right-radius: 0;
   border-bottom-left-radius: 0;
   border-top-left-radius: 70px;
@@ -1553,6 +1554,7 @@ footer {
 
 .footer__column {
   row-gap: 0.3rem;
+  font-size: 1.2rem;
 }
 
 
@@ -1569,6 +1571,10 @@ footer {
 
 .footer__p {
   font-size: 0.9rem;
+}
+
+.Footer__navigation {
+  gap: 0.5rem;
 }
 
 /********************************/
