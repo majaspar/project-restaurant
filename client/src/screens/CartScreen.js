@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart, deleteFromCart } from '../actions/cartActions';
 import Checkout from '../Checkout'
@@ -13,7 +13,14 @@ export default function CartScreen() {
     const cartItems = cartstate.cartItems
     let total = cartItems.reduce((x, item) => x + (item.price * item.qty), 0).toFixed(2)
     const dispatch = useDispatch()
-    console.log(cartstate)
+    //console.log(cartstate)
+
+
+    const [delivery, setDelivery] = useState(true)
+    const onOptionChange = e => {
+        setDelivery(e.target.value)
+    }
+
     return (
         <>
             <div className="header-and-hero CartScreen">
@@ -21,9 +28,9 @@ export default function CartScreen() {
                 <PageTitle content="Checkout" />
             </div>
             <div className="margins mb7">
-                <h1 className="mb3 mt2">Basket Items ({cartItems.length})</h1>
-
-                <div className="basket__grid flex-column">
+                <h1 className="mt2 section-title">Basket Items ({cartItems.length})</h1>
+                <hr />
+                <div className="basket__grid mt2 flex-column">
 
                     <div className="basket__items--wrapper flex-column">
 
@@ -47,16 +54,29 @@ export default function CartScreen() {
                         })}
 
                     </div>
+                    <div>
+                        <h3 className="ff-kaushan mb1">Delivery or Collection?</h3>
+                        <div className="basket__radio--buttons mb2 flex">
+                            <div>
+                                <input type="radio" name="collectionOrDelivery" id="collection" value={false} onChange={onOptionChange} />
+                                <label htmlFor='collection'>Collection</label>
+                            </div>
+                            <div>
+                                <input type="radio" name="collectionOrDelivery" id="delivery" defaultChecked value={true} onChange={onOptionChange} />
+                                <label htmlFor='delivery'>Delivery</label>
+                            </div>
 
-                    <div className="basket__total--wrapper">
-                        <h2>Total:</h2>
-                        <hr className="mb2" />
-                        <div style={{ textAlign: "right" }}>
-                            <div className="basket__total">£{total}</div>
-                            <Checkout total={total} />
+                        </div>
+                        <div className="basket__total--wrapper">
+
+                            <h2 className="ff-kaushan">Total:</h2>
+                            <hr className="mb2" />
+                            <div style={{ textAlign: "right" }}>
+                                <div className="basket__total">£{total}</div>
+                                <Checkout total={total} />
+                            </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </>

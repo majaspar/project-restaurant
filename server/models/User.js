@@ -14,24 +14,6 @@ const UserSchema = new Schema({
     updatedAt: { type: Date, default: Date.now },
 })
 
-//static signup method
-
-// UserSchema.statics.register = async function (name, email, password) {
-
-//     const emailExists = await this.findOne({ email })
-
-//     if (emailExists) {
-//         throw Error('This email address is already in use.')
-//     }
-
-//     const salt = await bcrypt.genSalt(10);
-//     const hash = await bcrypt.hash(password, salt);
-
-//     const newUser = await this.create({ name, email, password: hash })
-//     return newUser
-
-// }
-
 module.exports = mongoose.model('User', UserSchema);
 
 

@@ -62,9 +62,9 @@
 .Welcome__img-pizza {
     position: absolute;
     bottom: 0;
-    right: 20px;
+    right: 30px;
     z-index: -1;
-    height: 130px;
+    height: 180px;
     animation-name: upAndDown, rotate;
     animation-duration: 25s, 10s;
     animation-iteration-count: infinite;

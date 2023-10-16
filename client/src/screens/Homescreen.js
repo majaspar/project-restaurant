@@ -13,18 +13,18 @@ export default function Homescreen() {
         <>
             <div className="header-and-hero HomeScreen">
                 <Navbar />
-                <div className="margins hero grid PageTitle">
+                <div className="margins Homescreen__hero grid">
 
-                    <div className="hero__text mt3 mb5 flex-column">
-                        <h1 className="center">Your Perfect Italian</h1>
-                        <div className="mb7 center">
+                    <div className="hero__text grid">
+                        <h1 className="center mb3">Your Perfect Italian</h1>
+                        <div className="hero__desc--wrapper center">
                             <p className="hero__desc mt2 mb2">The most delicious flavours that Italian Cuisine has to offer!<br />
-                                Have a glass of splendid Sicilian wine and feel like you're in South of Italy.<br />
-                                Pizza, Pasta, Steak or Pollo? <br />
-                                Whatever your favourite - we've got it!</p>
+                                Have a glass of splendid Sicilian wine and feel like you're on vacatation in sunny Italy.<br />
+                                Pizza, Pasta, Steak? <br />
+                                We serve all your favourites!</p>
                             <div className="hero__buttons mt4 flex">
-                                <a href="tel:++447788990011"><button className="uppercase">Phone Us</button></a>
-                                <a href="/#/menu"><button className="uppercase">See Menu</button></a>
+                                <a href="tel:++447788990011"><button className=" ">Phone Us</button></a>
+                                <a href="/#/menu"><button className="">See Menu</button></a>
                             </div>
                         </div>
                     </div>
