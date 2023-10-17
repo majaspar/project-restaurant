@@ -36,6 +36,7 @@ export const logoutUser = () => dispatch => {
 
     localStorage.removeItem('currentUser')
     window.location.href = '/#/login'
+    window.location.reload()
 
 }
 

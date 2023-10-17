@@ -62,10 +62,10 @@ export default function DishesList() {
 
                   </td>
                   <td>{dish.category}</td>
-                  <td className="DishesList__actions flex">
+                  <td className="DishesList__actions">
 
                     <DeleteModal itemToDelete={dish.name} del={delDish} />
-                    <Link to={`/admin/editdish/${dish._id}`}><i className='fa fa-edit'></i></Link>
+                    {/* <Link to={`/admin/editdish/${dish._id}`}><i className='fa fa-edit'></i></Link> */}
                   </td>
 
                 </tr>

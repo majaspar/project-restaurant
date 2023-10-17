@@ -50,7 +50,9 @@ thead {
 }
 
 .DishesList__actions {
+    align-items: center;
     justify-content: space-around;
+    height: 100%;
 }
 
 .DishesList table {
@@ -99,6 +101,10 @@ tr:hover {
 
 .OrdersList .fa-circle-check {
     color: green;
+}
+
+.DeleteModal {
+    height: 100%;
 }
 
 .deleteModalWindow {
