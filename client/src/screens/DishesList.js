@@ -11,7 +11,6 @@ import Error from "../Error";
 import Loading from "../Loading";
 import AdminPages from '../AdminPages';
 import DeleteModal from "../DeleteModal";
-import { Link } from "react-router-dom";
 
 export default function DishesList() {
 

@@ -43,7 +43,7 @@ export default function Checkout({ total }) {
                     <button className="basket__checkout mt2">Checkout</button>
                 </StripeCheckout>
                 :
-                <p className="mt2 mb1 center">You need to be logged in to place an order.<br /><Link to="/#/login"><span style={{ textDecoration: "underline" }}>Go to Login</span></Link></p>}
+                <p className="mt2 mb1 center">You need to be logged in to place an order.<br /><Link to="/login"><span style={{ textDecoration: "underline" }}>Go to Login</span></Link></p>}
         </div>
 
     )

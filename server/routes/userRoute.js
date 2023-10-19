@@ -6,26 +6,37 @@ const jwt = require('jsonwebtoken');
 
 //const validator = require('validator');
 
-const createToken = (_id) => {
-    return jwt.sign({ _id }, process.env.SECRET, { expiresIn: '3d' })
-}
+// const createToken = (_id) => {
+//     return jwt.sign({ _id }, process.env.SECRET, { expiresIn: '3d' })
+// }
 
 router.post("/register", async (req, res) => {
 
     const { name, email, password } = req.body;
-    if (!email || !password || !name) { res.send('All fields must be filled') }
-    const emailExists = await User.findOne({ email })
-    if (emailExists) { throw res.send('This email address is already in use.') }
-    try {
-        const salt = await bcrypt.genSalt(10);
-        const hash = await bcrypt.hash(password, salt);
-        const newUser = new User({ name, email, password: hash })
-        newUser.save()
-        res.status(200).json({ email, newUser })
+    if (!email) { res.status(400).json({ message: 'All fields must be filled.' }) }
+    if (!password) { res.status(400).json({ message: 'All fields must be filled.' }) }
+    if (!!name) { res.status(400).json({ message: 'All fields must be filled.' }) }
 
-    } catch (error) {
-        return res.status(400).json({ error: error.message })
+    const emailExists = await User.findOne({ email })
+
+    if (emailExists) {
+        res.status(400).json({ message: 'This email is already in use.' })
+
     }
+
+    else {
+        try {
+            const salt = await bcrypt.genSalt(10);
+            const hash = await bcrypt.hash(password, salt);
+            const newUser = new User({ name, email, password: hash })
+            newUser.save()
+            res.status(200).json({ email, newUser })
+        }
+        catch (error) {
+            return res.status(400).json({ message: "An error has occurred." })
+        }
+    }
+
 })
 
 router.post("/login", async (req, res) => {

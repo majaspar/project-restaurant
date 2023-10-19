@@ -43,7 +43,7 @@ export default function RegisterScreen() {
 
 
 
-        <form className="register__form flex-column">
+        <form onSubmit={register} className="register__form flex-column">
           <h1 className="mt2 mb2 section-title">Register form</h1>
           <div className="form__labelled-item">
             <label className="form__label" htmlFor="name">Name: </label>
@@ -55,20 +55,21 @@ export default function RegisterScreen() {
             <div className="register__email--error"></div>
           </div>
           <div className="form__labelled-item">
-            <label required className="form__label" htmlFor="password">Password: </label>
+            <label className="form__label" htmlFor="password">Password: </label>
             <input type="password" id="password" placeholder="Enter password"
-              value={password} onChange={(e) => setPassword(e.target.value)}></input>
+              minLength="6" value={password} onChange={(e) => setPassword(e.target.value)} required></input>
           </div>
           <div className="form__labelled-item">
             <label className="form__label" htmlFor="repassword">Re-enter password: </label>
-            <input required type="password" id="repassword" placeholder="Re-enter password"
-              value={rePassword} onChange={(e) => setRePassword(e.target.value)}></input>
+            <input type="password" id="repassword" placeholder="Re-enter password"
+              minLength="6" value={rePassword} onChange={(e) => setRePassword(e.target.value)} required></input>
+            <div>{((!name) || (!password) || (!email) || (!rePassword)) ? <ErrorSmall message="All fields need to be filled." /> : <SuccessSmall message="All fields are filled." />}</div>
             <div>{(password.length >= 6) && ((password !== rePassword) ? <ErrorSmall message="Passwords do not match." /> : <SuccessSmall message="Passwords match." />)}</div>
             <div>{(password.length < 6) ? <ErrorSmall message="Password must consist of minimum 6 characters." /> : <SuccessSmall message="Password has at least 6 characters." />}</div>
-            <div>{(((password.length >= 6) && (password === rePassword) && name) && error) && <ErrorSmall message="Email already in use." />}</div>
+
           </div>
           <div id="" className="form__labelled-item"></div>
-          <button onClick={register} className="mt1">Register</button>
+          <button type="submit" className="mt1">Register</button>
         </form>
 
         <div className="mt5">Already have an account? <a style={{ color: "var(--clr-accent-red)", fontWeight: "bold" }} href="/#/login">Log in here.</a></div>

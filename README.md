@@ -20,7 +20,7 @@
 </ul>
 </li>
 <hr>
-<h3><strong>Live URL: <a href="https://restaurant.lenaesposito.co.uk" target="_blank">https://restaurant.lenaesposito.co.uk</a></h3>
+<h3><strong>Live URL: <a href="https://italian-restaurant.lenaesposito.co.uk" target="_blank">https://restaurant.lenaesposito.co.uk</a></h3>
 <hr>
 <h3>Demo Login</h3>
 <p>User login</p>

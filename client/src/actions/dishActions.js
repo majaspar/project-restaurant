@@ -7,7 +7,7 @@ export const getAllDishes = () => async (dispatch) => {
 
     try {
         const response = await axios.get('/api/dishes/getalldishes')
-        console.log(response)
+        //console.log(response)
         dispatch({ type: 'GET_DISHES_SUCCESS', payload: response.data })
     }
 
