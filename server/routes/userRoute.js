@@ -30,41 +30,39 @@ router.post("/register", async (req, res) => {
 
 router.post("/login", async (req, res) => {
 
-
     const { email, password } = req.body;
 
+    if (!email || !password) { res.status(400).json({ message: 'All fields must be filled.' }) }
+
+
     const user = await User.findOne({ email })
-    const match = await bcrypt.compare(password, user.password)
 
-    // if (!email || !password) {
-    //     throw Error('All fields must be filled')
-    // }
-
-
-    // if (!user) { throw Error('Incorrect EMAIL or password.') }
-
-    // if (!match) {
-    //     throw Error('Incorrect email or PASSWORD.')
-    // }
-    try {
-
-        if (match) {
-            const currentUser = {
-                isAdmin: user.isAdmin,
-                phone: user.phone,
-                avatar: user.avatar,
-                _id: user._id,
-                name: user.name,
-                email: user.email,
-                createdAt: user.createdAt
+    if (user) {
+        const match = await bcrypt.compare(password, user.password)
+        try {
+            if (match) {
+                const currentUser = {
+                    isAdmin: user.isAdmin,
+                    phone: user.phone,
+                    avatar: user.avatar,
+                    _id: user._id,
+                    name: user.name,
+                    email: user.email,
+                    createdAt: user.createdAt
+                }
+                res.send(currentUser);
+            } else {
+                res.status(400).json({ message: 'Incorrect email or password.' });
             }
-            res.send(currentUser);
         }
+        catch (error) {
+            return res.status(400).json({ message: 'An error occurred while trying to log in.' });
+        }
+    } else {
+        res.status(400).json({ message: 'Incorrect email or password.' });
+    }
 
-    }
-    catch (error) {
-        return res.status(400).json({ message: 'Something went wrong' });
-    }
+
 
 });
 
