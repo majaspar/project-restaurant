@@ -33,19 +33,21 @@ router.post("/login", async (req, res) => {
 
     const { email, password } = req.body;
 
+    const user = await User.findOne({ email })
+    const match = await bcrypt.compare(password, user.password)
+
     // if (!email || !password) {
     //     throw Error('All fields must be filled')
     // }
 
-    const user = await User.findOne({ email })
 
     // if (!user) { throw Error('Incorrect EMAIL or password.') }
 
-    const match = await bcrypt.compare(password, user.password)
     // if (!match) {
     //     throw Error('Incorrect email or PASSWORD.')
     // }
     try {
+
         if (match) {
             const currentUser = {
                 isAdmin: user.isAdmin,
@@ -58,6 +60,7 @@ router.post("/login", async (req, res) => {
             }
             res.send(currentUser);
         }
+
     }
     catch (error) {
         return res.status(400).json({ message: 'Something went wrong' });

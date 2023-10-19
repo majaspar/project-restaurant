@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
+//import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import { deleteDish, getAllDishes } from "../actions/dishActions";
 
 // /import Filter from "../components/Filter";
@@ -11,6 +11,7 @@ import Error from "../Error";
 import Loading from "../Loading";
 import AdminPages from '../AdminPages';
 import DeleteModal from "../DeleteModal";
+import { Link } from "react-router-dom";
 
 export default function DishesList() {
 

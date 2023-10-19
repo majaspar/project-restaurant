@@ -8,7 +8,7 @@ const Order = require('../models/Order')
 
 router.post('/placeorder', async (req, res) => {
     const { token, total, currentUser, cartItems, delivery } = req.body;
-    console.log(currentUser)
+    //console.log(currentUser)
     try {
         const customer = await stripe.customers.create({
             email: token.email,
@@ -37,7 +37,7 @@ router.post('/placeorder', async (req, res) => {
                     postcode: token.card.address_zip,
                     city: token.card.address_city
                 },
-                // mobile: currentUser.mobile,
+                phone: currentUser.phone,
                 transactionId: payment.source.id
             })
 
