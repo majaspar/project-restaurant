@@ -33,24 +33,28 @@ router.post("/login", async (req, res) => {
 
     const { email, password } = req.body;
 
-    if (!email || !password) {
-        throw Error('All fields must be filled')
-    }
+    // if (!email || !password) {
+    //     throw Error('All fields must be filled')
+    // }
 
     const user = await User.findOne({ email })
 
-    if (!user) { throw Error('Incorrect EMAIL or password.') }
+    // if (!user) { throw Error('Incorrect EMAIL or password.') }
 
     const match = await bcrypt.compare(password, user.password)
-    if (!match) {
-        throw Error('Incorrect email or PASSWORD.')
-    }
+    // if (!match) {
+    //     throw Error('Incorrect email or PASSWORD.')
+    // }
     try {
         if (match) {
             const currentUser = {
+                isAdmin: user.isAdmin,
+                phone: user.phone,
+                avatar: user.avatar,
                 _id: user._id,
                 name: user.name,
-                email: user.email
+                email: user.email,
+                createdAt: user.createdAt
             }
             res.send(currentUser);
         }
