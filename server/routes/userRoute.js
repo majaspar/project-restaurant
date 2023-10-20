@@ -9,14 +9,14 @@ const jwt = require('jsonwebtoken');
 router.post("/register", async (req, res) => {
 
     const { name, email, password } = req.body;
-    if (!email) { res.status(400).json({ message: 'All fields must be filled.' }) }
-    if (!password) { res.status(400).json({ message: 'All fields must be filled.' }) }
-    if (!!name) { res.status(400).json({ message: 'All fields must be filled.' }) }
+    if (!email) { return res.status(400).json({ message: 'All fields must be filled.' }) }
+    if (!password) { return res.status(400).json({ message: 'All fields must be filled.' }) }
+    if (!!name) { return res.status(400).json({ message: 'All fields must be filled.' }) }
 
     const emailExists = await User.findOne({ email })
 
     if (emailExists) {
-        res.status(400).json({ message: 'This email is already in use.' })
+        return res.status(400).json({ message: 'This email is already in use.' })
 
     }
 
