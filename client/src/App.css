@@ -322,6 +322,27 @@ button:active {
   box-shadow: inset 10px 15px 30px -23px rgba(245, 120, 120, 0.75);
 }
 
+.no-button {
+  text-align: left;
+  width: inherit;
+  max-width: 800px;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.no-button:hover {
+  background: none;
+
+}
+
+.no-button:active {
+  background: none;
+  box-shadow: none;
+}
+
 html {
   position: relative;
   background-color: var(--clr-white);
@@ -502,11 +523,12 @@ header {
 }
 
 .login__dropdown--item {
-  background-color: rgba(0, 0, 0, 0.548);
+  background: rgba(0, 0, 0, 0.548);
   padding: 0.9rem;
 }
 
 .login__dropdown--item:hover {
+  background: rgba(0, 0, 0, 0.548);
   text-decoration: underline;
   text-underline-offset: 0.7rem;
 }
@@ -1634,6 +1656,23 @@ footer {
 .register__form,
 .login__form {
   width: min(100%, 340px);
+}
+
+/**************************/
+/***   dashboard           ***/
+/**************************/
+.UserScreen__details {
+  margin-left: 1rem;
+}
+
+.UserScreen__details--item {
+  padding-top: 0.5rem;
+}
+
+.UserScreen__details--item span {
+  font-weight: bold;
+  display: inline-block;
+  min-width: 80px;
 }
 
 /**************************/

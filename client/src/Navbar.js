@@ -7,11 +7,10 @@ import Tooltip from '@mui/material/Tooltip';
 
 export default function Navbar() {
 
+  const dispatch = useDispatch();
   const cartState = useSelector(state => state.cartReducer);
   const userState = useSelector(state => state.loginUserReducer)
   const { currentUser } = userState;
-  const dispatch = useDispatch();
-
 
   //dropdown menu when logged in
   const dropDown = () => {
@@ -76,12 +75,13 @@ export default function Navbar() {
             <div className="login__dropdown flex-column">
               <div onClick={dropDown} className="login__username flex">
                 <sub><i id="login__dropdown--arrow" className="fa-solid fa-caret-right"></i></sub>
-                <span>{currentUser.name}</span>
+                <button className="no-button">{currentUser.name}</button>
               </div>
               <div id="login__dropdown--items" className="login__dropdown--items">
                 {currentUser.isAdmin && <a className="" href="/#/admin" alt="go to admin dashboard"><div className="login__dropdown--item ">Admin</div></a>}
-                <a className="" href="/#/orders" alt="see user's orders"><div className="login__dropdown--item ">Orders</div></a>
-                <div alt="Log out" className="login__dropdown--item login__logout" onClick={() => { dispatch(logoutUser()) }}>Log out</div>
+                <a className="" href="/#/dashboard" alt="see user's dashboard"><div className="login__dropdown--item ">Dashboard</div></a>
+                <a className="" href="/#/orders" alt="see user's orders"><div className="login__dropdown--item ">My orders</div></a>
+                <button alt="Log out" className="no-button login__dropdown--item login__logout" onClick={() => { dispatch(logoutUser()) }}>Log out</button>
               </div>
 
             </div>

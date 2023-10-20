@@ -25,7 +25,8 @@ export default function LoginScreen() {
     }
   }, []);
 
-  function login() {
+  function login(e) {
+    e.preventDefault();
     const user = { email, password };
     dispatch(loginUser(user));
   }

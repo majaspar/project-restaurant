@@ -1,14 +1,10 @@
 const express = require('express');
+
 const router = express.Router();
 const User = require('../models/User');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-//const validator = require('validator');
-
-// const createToken = (_id) => {
-//     return jwt.sign({ _id }, process.env.SECRET, { expiresIn: '3d' })
-// }
 
 router.post("/register", async (req, res) => {
 
@@ -38,6 +34,34 @@ router.post("/register", async (req, res) => {
     }
 
 })
+// const { name, email, password } = req.body;
+
+// try {
+//     const emailExists = await User.findOne({ email })
+//     if (emailExists) { return res.send({ error: 'This email is already in use.' }) }
+
+//     const salt = await bcrypt.genSalt(10);
+//     const encryptedPassword = await bcrypt.hash(password, salt);
+
+//     const newUser = new User({
+//         name,
+//         email,
+//         password: encryptedPassword
+//     })
+
+//     newUser.save()
+//     res.send({ status: "ok" })
+
+// } catch (error) {
+//     if (error.code == 11000) { console.log(error) }
+//     res.send({ status: error })
+// }
+
+
+// if (!email) { res.status(400).json({ message: 'All fields must be filled.' }) }
+// if (!password) { res.status(400).json({ message: 'All fields must be filled.' }) }
+// if (!!name) { res.status(400).json({ message: 'All fields must be filled.' }) }
+
 
 router.post("/login", async (req, res) => {
 
@@ -76,7 +100,46 @@ router.post("/login", async (req, res) => {
 
 
 });
+//if (!email || !password) { res.status(400).json({ message: 'All fields must be filled.' }) }
 
+
+// const user = await User.findOne({ email })
+
+// if (!user) { return res.send({ error: 'User not found.' }) }
+
+// const match = await bcrypt.compare(password, user.password)
+
+// if (match) {
+//     const token = jwt.sign({ email: user.email }, process.env.JWT_SECRET)
+//     if (res.status(201)) {
+//         return res.json({ status: "ok", data: token })
+//     } else {
+//         return res.json({ error: "error" })
+//     }
+// }
+// res.json({ status: "error", error: "Invalid password." })
+
+
+router.post("/userdata", async (req, res) => {
+
+    const { token } = req.body;
+
+    try {
+        const user = jwt.verify(token, process.env.JWT_SECRET)
+        console.log(user)
+        const userEmail = user.email;
+
+        User.findOne({ email: userEmail })
+            .then((data) => {
+                res.send({ status: "ok", data: data })
+            })
+            .catch((error) => {
+                res.send({ status: "error", data: error })
+            });
+    } catch (error) {
+
+    }
+})
 
 router.get("/getallusers", async (req, res) => {
 

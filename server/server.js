@@ -10,13 +10,15 @@ const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 const path = require('path');
 
 dotenv.config();
+
+
 connectDB();
+
+
 const app = express();
-
-const port = process.env.PORT;
-
 app.use(express.json());
 
+const port = process.env.PORT;
 
 
 app.use('/api/dishes/', dishRoute)               //if url is coming with 'api/dishes/' we navigate it to dishroute

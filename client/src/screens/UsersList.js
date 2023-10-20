@@ -15,8 +15,14 @@ import './AdminScreen.css'
 export default function UsersList() {
 
     const dispatch = useDispatch()
+
+
+    const userState = useSelector(state => state.loginUserReducer)
+    const { currentUser } = userState;
+
     const usersState = useSelector(state => state.getAllUsersReducer)
     const { error, loading, users } = usersState
+
 
     useEffect(() => {
 
@@ -40,6 +46,7 @@ export default function UsersList() {
                         <thead className=''>
                             <tr>
                                 <th>Name</th>
+                                <th>Admin</th>
                                 <th>Email</th>
                                 <th>User Id</th>
                                 <th>Delete</th>
@@ -52,6 +59,7 @@ export default function UsersList() {
                                 return (
                                     <tr key={user._id}>
                                         <td>{user.name}</td>
+                                        <td>{(user.isAdmin) ? "YES" : "NO"}</td>
                                         <td>{user.email}</td>
                                         <td>{user._id}</td>
                                         <td className="UsersList__td--delete">

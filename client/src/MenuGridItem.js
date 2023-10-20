@@ -33,13 +33,13 @@ export default function MenuGridItem({ dish }) {
                 <p className="menu__dish--description">{dish.description}</p>
             </div>
             <div className="menu__qty-span center">Qty:
-                <i onClick={deductQty}
-                    style={{ marginLeft: "1rem", color: "red" }}
-                    className="menu__icon fa-solid fa-circle-minus"></i>
+                <button style={{ marginLeft: "1rem" }} className="no-button" onClick={deductQty}><i
+                    style={{ color: "red" }}
+                    className="menu__icon fa-solid fa-circle-minus"></i></button>
                 <span className="menu__item--qty"> <b>{qty} </b> </span>
-                <i onClick={addQty}
+                <button className="no-button" onClick={addQty}><i
                     style={{ color: "green" }}
-                    className="menu__icon fa-solid fa-circle-plus"></i>
+                    className="menu__icon fa-solid fa-circle-plus"></i></button>
             </div>
             <div className="menu__dish--price center">Price: £{roundPrice(dish.price, qty)}</div>
             <button className="menu__btn--add" onClick={addtocart}>Add</button>
