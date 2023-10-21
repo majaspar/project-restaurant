@@ -9,30 +9,21 @@ const jwt = require('jsonwebtoken');
 router.post("/register", async (req, res) => {
 
     const { name, email, password } = req.body;
-    if (!email) { return res.status(400).json({ message: 'All fields must be filled.' }) }
-    if (!password) { return res.status(400).json({ message: 'All fields must be filled.' }) }
-    if (!!name) { return res.status(400).json({ message: 'All fields must be filled.' }) }
+    try {
 
-    const emailExists = await User.findOne({ email })
+        const emailExists = await User.findOne({ email })
+        if (emailExists) { return res.send({ error: 'This email is already in use.' }) }
 
-    if (emailExists) {
-        return res.status(400).json({ message: 'This email is already in use.' })
+        const salt = await bcrypt.genSalt(10);
+        const hash = await bcrypt.hash(password, salt);
+        const newUser = new User({ name, email, password: hash })
+        newUser.save()
+        res.status(200).json({ email, newUser })
 
     }
-
-    else {
-        try {
-            const salt = await bcrypt.genSalt(10);
-            const hash = await bcrypt.hash(password, salt);
-            const newUser = new User({ name, email, password: hash })
-            newUser.save()
-            res.status(200).json({ email, newUser })
-        }
-        catch (error) {
-            return res.status(400).json({ message: "An error has occurred." })
-        }
+    catch (error) {
+        return res.status(400).json({ error: "An error has occurred." })
     }
-
 })
 // const { name, email, password } = req.body;
 
