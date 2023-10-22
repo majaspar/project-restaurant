@@ -9,16 +9,19 @@ const jwt = require('jsonwebtoken');
 router.post("/register", async (req, res) => {
 
     const { name, email, password } = req.body;
-    try {
 
-        const emailExists = await User.findOne({ email })
-        if (emailExists) { return res.send({ error: 'This email is already in use.' }) }
+    const emailExists = await User.findOne({ email })
+    if (emailExists) { return res.send({ error: 'This email is already in use.' }) }
+
+    try {
 
         const salt = await bcrypt.genSalt(10);
         const hash = await bcrypt.hash(password, salt);
         const newUser = new User({ name, email, password: hash })
         newUser.save()
         res.status(200).json({ email, newUser })
+
+
 
     }
     catch (error) {

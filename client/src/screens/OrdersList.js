@@ -44,6 +44,7 @@ export default function OrdersList() {
                 <th>Col/Del</th>
                 <th>Amount</th>
                 <th>Date</th>
+                <th>Items</th>
                 <th>Status</th>
               </tr>
             </thead>
@@ -60,6 +61,12 @@ export default function OrdersList() {
                       <td>{order.delivery ? "Delivery" : "Collection"}</td>
                       <td className="center">£{(order.orderAmount).toFixed(2)}</td>
                       <td>{order.createdAt.substring(0, 10)}</td>
+                      <td>{order.items.map((item) => {
+                        return (
+                          <p style={{ fontSize: "0.9rem" }}>{item.name} x {item.qty}</p>
+                        )
+                      })
+                      }</td>
                       <td className="center">
                         {(!order.isCollected && !order.isDelivered) && <div className="OrdersList__status flex">
                           <button className="btn OrdersList__collected"

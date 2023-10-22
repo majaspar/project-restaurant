@@ -48,6 +48,7 @@ export default function UsersList() {
                                 <th>Name</th>
                                 <th>Admin</th>
                                 <th>Email</th>
+                                <th>Date registered</th>
                                 <th>User Id</th>
                                 <th>Delete</th>
                             </tr>
@@ -61,6 +62,7 @@ export default function UsersList() {
                                         <td>{user.name}</td>
                                         <td>{(user.isAdmin) ? "YES" : "NO"}</td>
                                         <td>{user.email}</td>
+                                        <td>{user.createdAt.substring(0, 10)}</td>
                                         <td>{user._id}</td>
                                         <td className="UsersList__td--delete">
                                             <DeleteModal itemToDelete={user.name} del={delUser} />
