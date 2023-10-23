@@ -46,8 +46,12 @@ export default function Address() {
                         placeItems: "center"
                     }}><SocialMediaIcons /></div>
                 </div>
-                <div className="Address__img shadow-dark" >
-                    <img src={inside} alt="inside of the restaurant" />
+                <div style={{
+                    transform: isInView ? "scale(1)" : "scale(0.2)",
+                    opacity: isInView ? 1 : 0,
+                    transition: "all 1.5s cubic-bezier(0.68, -0.85, 0.265, 1.55) 0.3s"
+                }} className="Address__img shadow-dark" >
+                    <img style={{ animation: "scaleImg 60s infinite" }} src={inside} alt="inside of the restaurant" />
                 </div>
             </div>
         </div>

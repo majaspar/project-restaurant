@@ -20,7 +20,7 @@ export default function About() {
                         <h2 style={{
                             transform: isInView ? "scale(1)" : "scale(1.9)",
                             opacity: isInView ? 1 : 0,
-                            transition: "all 0.4s ease-in 0.5s"
+                            transition: "all 0.8s ease-in 0.5s"
                         }}
                             className="about__title section-title">Enter the World<br />of Delicious Food</h2>
 
@@ -28,7 +28,7 @@ export default function About() {
                             style={{
                                 transform: isInView ? "none" : "translateX(-400px)",
                                 opacity: isInView ? 1 : 0,
-                                transition: "all 1s cubic-bezier(0.68, -0.85, 0.265, 1.55) 0.7s"
+                                transition: "all 1.5s cubic-bezier(0.68, -0.85, 0.265, 1.55) 0.8s"
                             }}>
                             <p className="text-desc justify">Italian cuisine includes deeply rooted traditions common to the whole country, as well as all the regional gastronomies, different from each other, especially between the north, the centre and the south of Italy, which are in continuous exchange. Many dishes that were once regional have proliferated with variations throughout the country. Italian cuisine offers an abundance of taste, and is one of the most popular and copied around the world.</p></div>
 

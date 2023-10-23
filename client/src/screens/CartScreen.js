@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart, deleteFromCart } from '../actions/cartActions';
 import Checkout from '../components/Checkout'
@@ -16,10 +16,12 @@ export default function CartScreen() {
     //console.log(cartstate)
 
 
-    const [delivery, setDelivery] = useState(true)
+    const [delivery, setDelivery] = useState(true);
+
     const onOptionChange = e => {
         setDelivery(e.target.value)
     }
+    console.log(delivery)
 
     return (
         <>
@@ -35,9 +37,11 @@ export default function CartScreen() {
                     <div className="basket__items--wrapper flex-column">
 
                         {cartItems.map(item => {
-                            const price = (item.price).toFixed(2)
-                            const subtotal = Number(item.price * item.qty).toFixed(2)
-                            return <div className="basket__item flex-column">
+
+                            const price = (item.price).toFixed(2);
+                            const subtotal = Number(item.price * item.qty).toFixed(2);
+
+                            return <div key={item.name} className="basket__item flex-column">
                                 <h3 className="basket__item--name uppercase">{item.name}</h3>
                                 <div className="basket__price-and-qty flex">
                                     <div>Price: £{price}</div>
@@ -73,7 +77,7 @@ export default function CartScreen() {
                             <hr className="mb2" />
                             <div style={{ textAlign: "right" }}>
                                 <div className="basket__total">£{total}</div>
-                                <Checkout total={total} />
+                                <Checkout total={total} delivery={delivery} />
                             </div>
                         </div>
                     </div>

@@ -7,7 +7,7 @@ import Error from "./Error";
 import Loading from "./Loading";
 import Success from "./Success";
 
-export default function Checkout({ total }) {
+export default function Checkout({ total, delivery }) {
 
     const orderState = useSelector((state) => state.placeOrderReducer)
     const { loading, error, success } = orderState;
@@ -18,8 +18,8 @@ export default function Checkout({ total }) {
 
     const tokenHandler = (token) => {
         //console.log(token)
-        dispatch(placeOrder(token, total))
-        // console.log(delivery)
+        dispatch(placeOrder(token, total, delivery))
+
     }
     return (
 
@@ -35,6 +35,7 @@ export default function Checkout({ total }) {
                     name="Italian Restaurant"
                     amount={total * 100}
                     shippingAddress
+                    billingAddress
                     token={tokenHandler}
                     stripeKey="pk_test_51NLs6gLOk2koDDsjhpD8KKVMZ3X927MnpOLvcJZCOtrwolY77jie9PTCyqKKzgnKa54iUhPvfXcbEdWukGn1COPi00cxHmqH9S"
                     currency="GBP"
