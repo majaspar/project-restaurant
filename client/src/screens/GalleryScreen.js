@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import PageTitle from '../PageTitle'
-import Navbar from '../Navbar';
+import PageTitle from '../components/PageTitle'
+import Navbar from '../components/Navbar';
 import CloseIcon from '@mui/icons-material/Close';
 
 

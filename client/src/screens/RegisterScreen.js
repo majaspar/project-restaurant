@@ -2,13 +2,13 @@ import React from 'react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { registerUser } from '../actions/userActions';
-import Error from "../Error";
-import ErrorSmall from "../ErrorSmall";
-import Loading from "../Loading";
-import Success from "../Success";
-import SuccessSmall from "../SuccessSmall";
-import Navbar from '../Navbar';
-import PageTitle from '../PageTitle';
+import Error from "../components/Error";
+import ErrorSmall from "../components/ErrorSmall";
+import Loading from "../components/Loading";
+import Success from "../components/Success";
+import SuccessSmall from "../components/SuccessSmall";
+import Navbar from '../components/Navbar';
+import PageTitle from '../components/PageTitle';
 
 export default function RegisterScreen() {
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { logoutUser } from "./actions/userActions";
+import { logoutUser } from "../actions/userActions";
 import SocialMediaIcons from './SocialMediaIcons';
 import Success from "./Success";
 import Tooltip from '@mui/material/Tooltip';

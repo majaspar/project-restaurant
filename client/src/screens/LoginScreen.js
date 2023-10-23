@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loginUser } from "../actions/userActions";
-import Error from "../Error";
-import Loading from "../Loading";
-import Navbar from '../Navbar';
-import PageTitle from '../PageTitle';
+import Error from "../components/Error";
+import Loading from "../components/Loading";
+import Navbar from '../components/Navbar';
+import PageTitle from '../components/PageTitle';
 // import Success from "../Success";
 
 

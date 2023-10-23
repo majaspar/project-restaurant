@@ -1,7 +1,7 @@
 import './App.css';
 import { useSelector, useDispatch } from "react-redux";
 import { HashRouter, Routes, Route } from 'react-router-dom';
-import Footer from './Footer';
+import Footer from './components/Footer';
 import CartScreen from './screens/CartScreen';
 import MenuScreen from './screens/MenuScreen';
 import RegisterScreen from './screens/RegisterScreen';

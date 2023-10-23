@@ -1,4 +1,4 @@
-import img1 from './assets/jay-wennington-N_Y88TWmGwA-unsplash.jpg';
+import img1 from '../assets/jay-wennington-N_Y88TWmGwA-unsplash.jpg';
 
 
 export default function About() {

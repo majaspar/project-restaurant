@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { placeOrder } from './actions/orderActions';
+import { placeOrder } from '../actions/orderActions';
 import StripeCheckout from 'react-stripe-checkout'
 import Error from "./Error";
 import Loading from "./Loading";

@@ -1,12 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import Navbar from '../Navbar';
-import Welcome from '../Welcome';
-import PopularDishes from '../PopularDishes';
-import PlaceOrderProcess from '../PlaceOrderProcess';
-import About from '../About';
-import Reviews from '../Reviews';
-import Address from '../Address';
+import Navbar from '../components/Navbar';
+import Welcome from '../components/Welcome';
+import PopularDishes from '../components/PopularDishes';
+import PlaceOrderProcess from '../components/PlaceOrderProcess';
+import About from '../components/About';
+import Reviews from '../components/Reviews';
+import Address from '../components/Address';
 
 const containerVariants = {
     hidden: {

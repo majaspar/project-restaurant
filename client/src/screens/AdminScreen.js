@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import './AdminScreen.css'
-import AdminPages from '../AdminPages'
-import Navbar from "../Navbar";
-import PageTitle from "../PageTitle";
+import AdminPages from '../components/AdminPages'
+import Navbar from "../components/Navbar";
+import PageTitle from "../components/PageTitle";
 
 export default function AdminScreen() {
 

@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from 'react-redux'
 import { addDish } from "../actions/dishActions";
 
-import Navbar from "../Navbar";
-import PageTitle from "../PageTitle";
-import Error from "../Error";
-import Loading from "../Loading";
-import Success from "../Success";
-import AdminPages from '../AdminPages'
+import Navbar from "../components/Navbar";
+import PageTitle from "../components/PageTitle";
+import Error from "../components/Error";
+import Loading from "../components/Loading";
+import Success from "../components/Success";
+import AdminPages from '../components/AdminPages'
 
 
 export default function AddDish() {

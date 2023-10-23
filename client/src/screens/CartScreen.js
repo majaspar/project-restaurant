@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addToCart, deleteFromCart } from '../actions/cartActions';
-import Checkout from '../Checkout'
-import Navbar from '../Navbar';
-import PageTitle from '../PageTitle';
+import Checkout from '../components/Checkout'
+import Navbar from '../components/Navbar';
+import PageTitle from '../components/PageTitle';
 
 
 

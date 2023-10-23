@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux'
 import { getUserOrders } from '../actions/orderActions'
-import Error from "../Error";
-import Loading from "../Loading";
-import Navbar from '../Navbar';
-import PageTitle from '../PageTitle';
+import Error from "../components/Error";
+import Loading from "../components/Loading";
+import Navbar from '../components/Navbar';
+import PageTitle from '../components/PageTitle';
 
 import AOS from 'aos'
 import 'aos/dist/aos.css';

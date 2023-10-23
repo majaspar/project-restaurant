@@ -1,7 +1,7 @@
 import React from 'react'
-import Menu from '../Menu'
-import Navbar from '../Navbar'
-import PageTitle from '../PageTitle'
+import Menu from '../components/Menu'
+import Navbar from '../components/Navbar'
+import PageTitle from '../components/PageTitle'
 
 export default function MenuScreen() {
     return (

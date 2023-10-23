@@ -2,7 +2,7 @@
 import MenuGridItem from './MenuGridItem';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllDishes } from './actions/dishActions';
+import { getAllDishes } from '../actions/dishActions';
 import Loading from './Loading'
 import Error from './Error'
 

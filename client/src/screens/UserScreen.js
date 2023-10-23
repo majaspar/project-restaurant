@@ -1,10 +1,10 @@
 import React from 'react'
-import Navbar from '../Navbar';
-import PageTitle from '../PageTitle';
+import Navbar from '../components/Navbar';
+import PageTitle from '../components/PageTitle';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from "react-redux";
-import Error from "../Error";
-import Loading from "../Loading";
+import Error from "../components/Error";
+import Loading from "../components/Loading";
 import { getUserOrders } from '../actions/orderActions'
 
 export default function UserScreen() {

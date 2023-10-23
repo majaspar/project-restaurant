@@ -1,6 +1,6 @@
 import React from 'react'
-import PageTitle from '../PageTitle'
-import Navbar from '../Navbar'
+import PageTitle from '../components/PageTitle'
+import Navbar from '../components/Navbar'
 import img1 from '../assets/photo-1502301103665-0b95cc738daf.jpg';
 import img2 from '../assets/kamil-kalbarczyk-19Ft3QfakMo-unsplash.jpg'
 

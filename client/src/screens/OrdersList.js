@@ -4,11 +4,11 @@ import { collectOrder, deliverOrder, getAllOrders } from "../actions/orderAction
 
 import './AdminScreen.css';
 
-import Error from "../Error";
-import Loading from "../Loading";
-import Navbar from "../Navbar";
-import PageTitle from "../PageTitle";
-import AdminPages from '../AdminPages'
+import Error from "../components/Error";
+import Loading from "../components/Loading";
+import Navbar from "../components/Navbar";
+import PageTitle from "../components/PageTitle";
+import AdminPages from '../components/AdminPages'
 //import Filter from "../Filter";
 
 export default function OrdersList() {

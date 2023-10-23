@@ -1,5 +1,5 @@
 import React from 'react'
-import inside from './assets/adrien-olichon-XB1W7TlTaxQ-unsplash.jpg'
+import inside from '../assets/adrien-olichon-XB1W7TlTaxQ-unsplash.jpg'
 import SocialMediaIcons from './SocialMediaIcons'
 
 export default function Address() {

@@ -1,6 +1,6 @@
 import React from 'react';
-import Navbar from '../Navbar';
-import PageTitle from '../PageTitle';
+import Navbar from '../components/Navbar';
+import PageTitle from '../components/PageTitle';
 
 export default function ThanksScreen() {
     return (

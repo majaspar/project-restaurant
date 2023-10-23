@@ -1,6 +1,6 @@
 import React from 'react';
-import PageTitle from '../PageTitle';
-import Navbar from '../Navbar';
+import PageTitle from '../components/PageTitle';
+import Navbar from '../components/Navbar';
 
 //Google Maps
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';

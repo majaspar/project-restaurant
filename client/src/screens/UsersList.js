@@ -3,12 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 // import { getAllOrders } from "../actions/orderActions";
 import { deleteUser, getAllUsers } from '../actions/userActions'
 
-import Error from "../Error";
-import Loading from "../Loading";
-import Navbar from "../Navbar";
-import PageTitle from "../PageTitle";
-import DeleteModal from "../DeleteModal";
-import AdminPages from '../AdminPages'
+import Error from "../components/Error";
+import Loading from "../components/Loading";
+import Navbar from "../components/Navbar";
+import PageTitle from "../components/PageTitle";
+import DeleteModal from "../components/DeleteModal";
+import AdminPages from '../components/AdminPages'
 
 import './AdminScreen.css'
 

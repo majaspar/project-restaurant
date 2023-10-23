@@ -2,10 +2,10 @@ import React from 'react'
 import './Welcome.css'
 
 
-import img1 from './assets/eiliv-aceron-wNQoaYCFcsI-unsplash.jpg';
-import img2 from './assets/elevate-iv6yNy7oBqQ-unsplash.jpg';
-import vector1 from './assets/vector1.svg';
-import pizza from './assets/pizza.png';
+import img1 from '../assets/eiliv-aceron-wNQoaYCFcsI-unsplash.jpg';
+import img2 from '../assets/elevate-iv6yNy7oBqQ-unsplash.jpg';
+import vector1 from '../assets/vector1.svg';
+import pizza from '../assets/pizza.png';
 
 
 

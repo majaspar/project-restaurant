@@ -5,12 +5,12 @@ import { deleteDish, getAllDishes } from "../actions/dishActions";
 
 // /import Filter from "../components/Filter";
 
-import Navbar from "../Navbar";
-import PageTitle from "../PageTitle";
-import Error from "../Error";
-import Loading from "../Loading";
-import AdminPages from '../AdminPages';
-import DeleteModal from "../DeleteModal";
+import Navbar from "../components/Navbar";
+import PageTitle from "../components/PageTitle";
+import Error from "../components/Error";
+import Loading from "../components/Loading";
+import AdminPages from '../components/AdminPages';
+import DeleteModal from "../components/DeleteModal";
 
 export default function DishesList() {
 
