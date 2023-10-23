@@ -1,5 +1,7 @@
 import React from 'react'
-import './Welcome.css'
+import { useRef } from 'react';
+import { useInView } from "framer-motion";
+import './Welcome.css';
 
 
 import img1 from '../assets/eiliv-aceron-wNQoaYCFcsI-unsplash.jpg';
@@ -10,10 +12,17 @@ import pizza from '../assets/pizza.png';
 
 
 export default function Welcome() {
+    const ref = useRef(null);
+    const isInView = useInView(ref);
+
     return (
         <section className="Welcome margins mt5 mb7">
-            <div className="Welcome__wrapper flex">
-                <div className="Welcome__imgs">
+            <div ref={ref} className="Welcome__wrapper flex">
+                <div style={{
+                    transform: isInView ? "none" : "translateY(-200px)",
+                    opacity: isInView ? 1 : 0,
+                    transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+                }} className="Welcome__imgs">
                     <img className="Welcome__vector-1" src={vector1} alt="S-shaped line for decorating background" />
                     <img className="Welcome__img-1 shadow-dark" src={img1} alt="chef cooking" />
                     <img className="Welcome__img-2 shadow" src={img2} alt="chef cooking" />
@@ -21,7 +30,12 @@ export default function Welcome() {
                 <div className="Welcome__text center">
 
                     {/*div wrapper to center content */}
-                    <div className="Welcome__text--wrapper">
+
+                    <div style={{
+                        transform: isInView ? "none" : "translateY(400px)",
+                        opacity: isInView ? 1 : 0,
+                        transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+                    }} className="Welcome__text--wrapper">
                         <h2 className="mb2 section-title" >
                             Welcome to<br />
                             Italian Restaurant</h2>

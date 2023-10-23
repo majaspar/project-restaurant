@@ -20,7 +20,7 @@ export default function PopularDishItem({ imgSource, dishTitle, dishDesc, menuse
                     <div className="popular-dishes__description text-desc center mb2">{dishDesc}
                     </div>
 
-                    <button className="popular-dishes__btn btn-action mt1"><Link smooth to={link}>See all {menusection}</Link></button>
+                    <button className="popular-dishes__btn btn-action mt1 mb1"><Link smooth to={link}>See all {menusection}</Link></button>
                 </div>
 
             </div>
