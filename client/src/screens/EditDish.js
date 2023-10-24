@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { editDish, getDishById } from "../actions/dishActions";
 import Error from "../components/Error";
@@ -8,9 +9,13 @@ import AdminPages from '../components/AdminPages'
 import Navbar from "../components/Navbar";
 import PageTitle from "../components/PageTitle";
 
-export default function EditDish({ match }) {
+export default function EditDish() {
 
-  const dispatch = useDispatch();
+  const { pathname } = useLocation();
+  const match = pathname.replace("/admin/editdish/", "");
+  console.log(match)
+  const dispatch = useDispatch()
+
 
   const [name, setName] = useState("");
   const [price, setPrice] = useState();
@@ -30,7 +35,7 @@ export default function EditDish({ match }) {
 
     if (dish) {
 
-      if (dish._id === match.params.dishId) {
+      if (dish._id === match) {
         setName(dish.name)
         setDescription(dish.description)
         setCategory(dish.category)
@@ -38,14 +43,14 @@ export default function EditDish({ match }) {
         setIsVegetarian(dish.isVegetarian)
       }
       else {
-        dispatch(getDishById(match.params.dishId));
+        dispatch(getDishById(match));
       }
     }
     else {
-      dispatch(getDishById(match.params.dishId));
+      dispatch(getDishById(match));
     }
 
-  }, [dish, dispatch]);
+  }, [dish, match]);
 
 
 
@@ -54,7 +59,7 @@ export default function EditDish({ match }) {
     e.preventDefault();
 
     const editedDish = {
-      _id: match.params.dishId,
+      _id: match,
       name,
       description,
       category,

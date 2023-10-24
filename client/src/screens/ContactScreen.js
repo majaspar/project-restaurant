@@ -3,29 +3,29 @@ import PageTitle from '../components/PageTitle';
 import Navbar from '../components/Navbar';
 
 //Google Maps
-import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
-const containerStyle = {
-    width: '100%',
-    height: '450px'
-};
+// import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
+// const containerStyle = {
+//     width: '100%',
+//     height: '450px'
+// };
 
-const center = {
-    lat: 51.45875859621607,
-    lng: -2.5847960486048995
-};
+// const center = {
+//     lat: 51.45875859621607,
+//     lng: -2.5847960486048995
+// };
 
 
 export default function ContactScreen() {
 
     // Set up Google maps
-    const { isLoaded } = useJsApiLoader({
-        id: 'google-map-script',
-        googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY,
-    })
+    // const { isLoaded } = useJsApiLoader({
+    //     id: 'google-map-script',
+    //     googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY,
+    // })
 
-    if (!isLoaded) {
-        return <div>Map not loaded.</div>
-    }
+    // if (!isLoaded) {
+    //     return <div>Map not loaded.</div>
+    // }
 
     return (
         <>
@@ -56,16 +56,8 @@ export default function ContactScreen() {
                         </div>
                     </div>
                 </div>
-                <h2 className="section-title margins center">Here's where we are:</h2>
-                {/* Embedded Map */}
-                <div style={{ height: '400px', width: '100vw' }}>
-                    <GoogleMap
-                        mapContainerStyle={containerStyle}
-                        center={center}
-                        zoom={14}>
-                        <Marker position={center} />
-                    </GoogleMap>
-                </div>
+                <h2 className="section-title margins center">Here's where to find us:</h2>
+                <div className="ContactScreen__map shadow"></div>
 
                 <section className="margins mt7 mb7 ContactForm__wrapper">
 

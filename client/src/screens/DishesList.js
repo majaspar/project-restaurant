@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { deleteDish, getAllDishes } from "../actions/dishActions";
 
@@ -21,7 +21,7 @@ export default function DishesList() {
 
   useEffect(() => {
     dispatch(getAllDishes());
-  }, []);
+  }, [dishes]);
 
 
 
@@ -65,7 +65,7 @@ export default function DishesList() {
                   <td className="DishesList__actions">
 
                     <DeleteModal itemToDelete={dish.name} del={delDish} />
-                    {/* <Link to={`/admin/editdish/${dish._id}`}><i className='fa fa-edit'></i></Link> */}
+                    <Link to={`/admin/editdish/${dish._id}`}><i className='fa fa-edit'></i></Link>
                   </td>
 
                 </tr>

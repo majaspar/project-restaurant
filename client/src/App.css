@@ -1334,6 +1334,14 @@ header {
 /*****************************/
 /***   Contact Screen         ***/
 /*****************************/
+
+.ContactScreen__map {
+  height: 300px;
+  background: url('./assets/map.png');
+  background-size: cover;
+  background-position: center;
+}
+
 .ContactScreen__wrapper {
   background: url('assets/vector2.svg') repeat-y;
   background-size: contain;

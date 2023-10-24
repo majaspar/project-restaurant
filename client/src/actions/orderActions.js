@@ -10,7 +10,7 @@ export const placeOrder = (token, total, delivery) => async (dispatch, getState)
 
     try {
 
-        const response = await axios.post('/api/orders/placeorder', { token, total, delivery, currentUser, cartItems })
+        await axios.post('/api/orders/placeorder', { token, total, delivery, currentUser, cartItems })
         dispatch({ type: 'PLACE_ORDER_SUCCESS' })
         localStorage.removeItem('cartItems')
         window.location.href = '/#/orders'
@@ -49,7 +49,7 @@ export const getAllOrders = () => async (dispatch, getState) => {
         const response = await axios.get('/api/orders/getallorders')
 
 
-        console.log(response);
+        //console.log(response);
 
         dispatch({ type: 'GET_ALLORDERS_SUCCESS', payload: response.data })
     } catch (error) {
@@ -62,7 +62,7 @@ export const collectOrder = (orderId) => async dispatch => {
 
     try {
         const response = await axios.post('/api/orders/collectorder', { orderId })
-        console.log(response);
+        //console.log(response);
         alert('Order Collected')
         const orders = await axios.get('/api/orders/getallorders')
         dispatch({ type: 'GET_ALLORDERS_SUCCESS', payload: orders.data })
