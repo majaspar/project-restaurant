@@ -270,10 +270,10 @@ html {
 /**************************/
 /***   Selectors   ***/
 /**************************/
-
+/* 
 * {
   transition: 300ms;
-}
+} */
 
 body {
 
@@ -298,7 +298,8 @@ p {
   font-size: 1.2rem;
 }
 
-ul {
+ul,
+li {
   list-style-type: none;
 }
 

@@ -92,6 +92,10 @@ tr:hover {
 
 }
 
+.fa-edit {
+    margin-left: 2rem;
+}
+
 .OrdersList__status {
     flex-wrap: wrap;
     justify-content: space-around;
