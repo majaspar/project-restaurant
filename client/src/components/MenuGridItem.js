@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { roundPrice } from "../utils";
 import { useDispatch } from 'react-redux'
 import { addToCart } from "../actions/cartActions";
+import { motion } from "framer-motion";
 
 export default function MenuGridItem({ dish }) {
     const [qty, setQty] = useState(1)
@@ -30,7 +31,8 @@ export default function MenuGridItem({ dish }) {
                     {dish.isVegetarian && <i className="menu_icon-vegetarian fa-solid fa-leaf"></i>}
 
                 </h3>
-                <p className="menu__dish--description">{dish.description}</p>
+                <p
+                    className="menu__dish--description">{dish.description}</p>
             </div>
             <div className="menu__qty-span center">Qty:
                 <button style={{ marginLeft: "1rem" }} className="no-button" onClick={deductQty}><i

@@ -65,6 +65,7 @@ li {
 a {
   color: inherit;
   text-decoration: none;
+  transition: all 300ms;
 }
 
 input,
@@ -303,6 +304,10 @@ li {
   list-style-type: none;
 }
 
+div {
+
+  transition: all 300ms;
+}
 
 button {
   max-width: 200px;
@@ -311,6 +316,7 @@ button {
   border-radius: 8px;
   cursor: pointer;
   box-shadow: 1px 1px 15px 0px rgba(175, 167, 167, 0.651);
+  transition: all 300ms;
 }
 
 button:hover {
@@ -471,6 +477,7 @@ header {
   padding: 0.5rem;
   font-size: 1.2rem;
   border-radius: 50%;
+  transition: all 300ms;
 }
 
 .header__icon:hover {
@@ -521,17 +528,29 @@ header {
 
 .login__dropdown--items {
   display: none;
+  transition: all 300ms;
+}
+
+.login__dropdown--items a {
+
+  transition: all 300ms;
+}
+
+.fa-caret-right {
+  transition: all 300ms;
 }
 
 .login__dropdown--item {
   background: rgba(0, 0, 0, 0.548);
   padding: 0.9rem;
+  transition: all 300ms;
 }
 
 .login__dropdown--item:hover {
   background: rgba(0, 0, 0, 0.548);
   text-decoration: underline;
   text-underline-offset: 0.7rem;
+  transition: text-underline-offset 300ms;
 }
 
 .login__dropdown .fa-caret-right {
@@ -570,6 +589,7 @@ header {
     z-index: 20;
     height: 100vh;
     width: min(80vw, 360px);
+    transition: all 300ms;
   }
 
   .nav__list {
@@ -594,6 +614,7 @@ header {
     height: 3rem;
     background: var(--clr-accent);
     cursor: pointer;
+    transition: all 300;
   }
 
   .nav__list--closeX:hover {
@@ -1637,6 +1658,7 @@ footer {
   gap: 0.5rem;
   border-top-right-radius: 40%;
   border-bottom-left-radius: 40%;
+  transition: all 300ms;
 
 }
 

@@ -14,7 +14,7 @@ export default function MenuGrid({ menuSectionTitle, menuCategory, hash }) {
         hidden: {
             opacity: 0
         },
-        visible: (index: number) => ({
+        visible: (index) => ({
             opacity: 1,
             transition: { delay: 0.05 * index }
         })
@@ -32,7 +32,11 @@ export default function MenuGrid({ menuSectionTitle, menuCategory, hash }) {
 
     return (
         <div className="menu__grid" id={hash}>
-            <h2 className="menu__title center section-title mt3">{menuSectionTitle}</h2>
+            <motion.h2
+                initial={{ scale: 0.1 }}
+                whileInView={{ scale: [0.1, 1.5, 0.8, 1] }}
+                transition={{ type: 'spring', stiffness: 100, duration: 0.6 }}
+                className="menu__title center section-title mt3">{menuSectionTitle}</motion.h2>
             {loading ? (<Loading />) : error ? (<Error message="There's been an error while loading the menu." />) : (
                 dishes.map((dish, index) => {
 

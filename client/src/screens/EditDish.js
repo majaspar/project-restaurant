@@ -101,6 +101,7 @@ export default function EditDish() {
             <label className="form__label" htmlFor="price">Price: </label>
             <input
               type="number"
+              step="0.01"
               min={0}
               id="price"
               value={price}

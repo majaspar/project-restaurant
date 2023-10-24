@@ -58,7 +58,7 @@ export const addDish = (dish) => async dispatch => {
         const response = await axios.post('/api/dishes/adddish', { dish })
         console.log(response);
         dispatch({ type: 'ADD_DISH_SUCCESS' })
-        setTimeout(function () { window.location.href = '/admin/disheslist' }, 2000);
+        setTimeout(function () { window.location.href = '/#/admin/disheslist' }, 2000);
 
     } catch (error) {
         dispatch({ type: 'ADD_DISH_FAILED', payload: error })
@@ -71,7 +71,7 @@ export const editDish = (editedDish) => async dispatch => {
         const response = await axios.post('/api/dishes/editdish', { editedDish })
         console.log(response);
         dispatch({ type: 'EDIT_DISH_SUCCESS' })
-        window.location.href = '/admin/disheslist'
+        window.location.href = '/#/admin/disheslist'
     } catch (error) {
         dispatch({ type: 'EDIT_DISH_FAILED', payload: error })
     }
@@ -82,10 +82,10 @@ export const deleteDish = (dishId) => async dispatch => {
     try {
         const response = await axios.post('/api/dishes/deletedish', { dishId })
         alert('Dish deleted successfully.')
-        console.log(response);
+        //console.log(response);
         window.location.reload()
     } catch (error) {
-        alert('Something went wrong...')
+        alert('Something went wrong while trying to delete.')
         console.log(error);
     }
 
