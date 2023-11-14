@@ -1,7 +1,7 @@
 <h1>A full stack Italian Restaurant Delivery/Collection Application developed using MERN stack.</h1>
 <hr>
 <h2>Prominent features of app are:</h2>
-<ol>
+<ul>
 <li>Redux and Redux-Thunk for state management</li>
 <li>Add to basket Feature</li>
 <li>Update basket Feature</li>
@@ -9,18 +9,20 @@
 <li>Stripe Payment Gateway Integration</li>
 <li>Placing Delivery/Collection Orders</li>
 <li>Storing orders in database (MongoDB)</li>
-<li>Retrieving user orders</li>
+<li>User registation and login</li>
+<li>Encrypting user passwords with bcrypt</li>
+<li>Retrieving users' orders</li>
 <li>Tracking order status</li>
-<li>
+</ul>
 <ul>Admin Dashboard:<br>
 <li>See/delete registered users</li>
 <li>See/edit/delete items on the menu</li>
 <li>Add new menu items</li>
 <li>Mark orders as delivered or collected</li>
 </ul>
-</li>
+
 <hr>
-<h3><strong>Live URL: <a href="https://italian-restaurant.lenaesposito.co.uk" target="_blank">https://restaurant.lenaesposito.co.uk</a></h3>
+<h3><strong>Live URL: <a href="https://italian-restaurant.lenaesposito.co.uk" target="_blank">https://italian-restaurant.lenaesposito.co.uk</a></h3>
 <hr>
 <h3>Demo Login</h3>
 <p>User login</p>

@@ -15,10 +15,10 @@ dotenv.config();
 connectDB();
 
 
+const port = process.env.PORT;
 const app = express();
 app.use(express.json());
 
-const port = process.env.PORT;
 
 
 app.use('/api/dishes/', dishRoute)               //if url is coming with 'api/dishes/' we navigate it to dishroute

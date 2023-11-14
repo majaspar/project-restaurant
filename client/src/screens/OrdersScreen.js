@@ -30,8 +30,6 @@ export default function OrdersScreen() {
                 {loading && <Loading />}
                 {error && <Error />}
 
-
-
                 {orders.length === 0 && <h2 className="mb5">You have not placed any orders yet. </h2>}
 
 

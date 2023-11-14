@@ -9,6 +9,7 @@ const UserSchema = new Schema({
     phone: { type: String, required: false },
     avatar: { type: String, required: false },
     isAdmin: { type: Boolean, required: true, default: false },
+    active: { type: Boolean, default: true },
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now },
 })

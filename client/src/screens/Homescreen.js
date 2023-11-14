@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Welcome from '../components/Welcome';
 import PopularDishes from '../components/PopularDishes';
@@ -9,7 +9,9 @@ import Address from '../components/Address';
 import { useRef } from 'react';
 import { useInView } from "framer-motion";
 
+
 export default function Homescreen() {
+
 
     const ref = useRef(null);
     const isInView = useInView(ref);
@@ -19,6 +21,7 @@ export default function Homescreen() {
                 <Navbar />
                 <div ref={ref} className="margins Homescreen__hero grid">
 
+    
                     <div
                         className="hero__text grid">
                         <h1 style={{
@@ -53,6 +56,9 @@ export default function Homescreen() {
                 </div>
 
             </div>
+
+       
+            
             <Welcome />
             <PopularDishes />
             <About />

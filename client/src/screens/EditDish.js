@@ -135,7 +135,7 @@ export default function EditDish() {
             </select>
 
           </div>
-          <button type="submit">Edit Dish</button>
+          <button type="submit">Update Dish</button>
         </form>
 
       </div>
